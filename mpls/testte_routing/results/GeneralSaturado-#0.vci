@@ -1,0 +1,3353 @@
+file 28784833 1715441828                                        
+version 3
+run General-0-20240511-13:01:10-9000
+attr configname General
+attr datetime 20240511-13:01:10
+attr datetimef 20240511-130110
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network RSVPTE4
+attr processid 9000
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../images
+config network RSVPTE4
+config sim-time-limit 50s
+config total-stack 64MiB
+config **.host{1..2,5}.numApps 1
+config **.host{1..2,5}.app[*].typename UdpBasicApp
+config **.host{1..2,5}.app[0].localPort 100
+config **.host{1..2,5}.app[0].destPort 100
+config **.host{1..2,5}.app[0].messageLength "128 bytes"
+config **.host{1..2,5}.app[0].sendInterval 0.01s
+config **.host{1..2,5}.app[0].destAddresses "\"host3\""
+config **.host3.numApps 1
+config **.host3.app[0].typename UdpSink
+config **.host3.app[0].localPort 100
+config **.host1.ipv4.routingTable.routingFile "\"host1.rt\""
+config **.host2.ipv4.routingTable.routingFile "\"host2.rt\""
+config **.host3.ipv4.routingTable.routingFile "\"host3.rt\""
+config **.host4.ipv4.routingTable.routingFile "\"host4.rt\""
+config **.host5.ipv4.routingTable.routingFile "\"host5.rt\""
+config **.LSR1.classifier.config "xmldoc(\"LSR1_fec.xml\")"
+config **.LSR1.rsvp.traffic "xmldoc(\"LSR1_rsvp.xml\")"
+config **.LSR*.rsvp.helloInterval 0.2s
+config **.LSR*.rsvp.helloTimeout 0.5s
+config **.LSR1.ipv4.routingTable.routingFile "\"LSR1.rt\""
+config **.LSR2.ipv4.routingTable.routingFile "\"LSR2.rt\""
+config **.LSR3.ipv4.routingTable.routingFile "\"LSR3.rt\""
+config **.LSR4.ipv4.routingTable.routingFile "\"LSR4.rt\""
+config **.LSR5.ipv4.routingTable.routingFile "\"LSR5.rt\""
+config **.LSR6.ipv4.routingTable.routingFile "\"LSR6.rt\""
+config **.LSR7.ipv4.routingTable.routingFile "\"LSR7.rt\""
+config **.ppp[*].queue.typename DropTailQueue
+config **.ppp[*].queue.packetCapacity 10
+config **.scenarioManager.script "xml(\"<scenario/>\")"
+
+vector 0 RSVPTE4.LSR1.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 1 RSVPTE4.LSR1.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 2 RSVPTE4.LSR1.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 3 RSVPTE4.LSR1.ppp[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 4 RSVPTE4.LSR1.ppp[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 5 RSVPTE4.LSR1.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 6 RSVPTE4.LSR1.ppp[2].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 7 RSVPTE4.LSR1.ppp[2].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 8 RSVPTE4.LSR1.ppp[2].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 9 RSVPTE4.LSR1.ppp[3].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 10 RSVPTE4.LSR1.ppp[3].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 11 RSVPTE4.LSR1.ppp[3].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 12 RSVPTE4.LSR1.ppp[4].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 13 RSVPTE4.LSR1.ppp[4].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 14 RSVPTE4.LSR1.ppp[4].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 15 RSVPTE4.LSR2.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 16 RSVPTE4.LSR2.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 17 RSVPTE4.LSR2.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 18 RSVPTE4.LSR2.ppp[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 19 RSVPTE4.LSR2.ppp[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 20 RSVPTE4.LSR2.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 21 RSVPTE4.LSR2.ppp[2].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 22 RSVPTE4.LSR2.ppp[2].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 23 RSVPTE4.LSR2.ppp[2].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 24 RSVPTE4.LSR3.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 25 RSVPTE4.LSR3.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 26 RSVPTE4.LSR3.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 27 RSVPTE4.LSR3.ppp[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 28 RSVPTE4.LSR3.ppp[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 29 RSVPTE4.LSR3.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 30 RSVPTE4.LSR3.ppp[2].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 31 RSVPTE4.LSR3.ppp[2].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 32 RSVPTE4.LSR3.ppp[2].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 33 RSVPTE4.LSR4.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 34 RSVPTE4.LSR4.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 35 RSVPTE4.LSR4.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 36 RSVPTE4.LSR4.ppp[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 37 RSVPTE4.LSR4.ppp[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 38 RSVPTE4.LSR4.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 39 RSVPTE4.LSR4.ppp[2].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 40 RSVPTE4.LSR4.ppp[2].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 41 RSVPTE4.LSR4.ppp[2].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 42 RSVPTE4.LSR5.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 43 RSVPTE4.LSR5.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 44 RSVPTE4.LSR5.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 45 RSVPTE4.LSR5.ppp[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 46 RSVPTE4.LSR5.ppp[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 47 RSVPTE4.LSR5.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 48 RSVPTE4.LSR5.ppp[2].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 49 RSVPTE4.LSR5.ppp[2].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 50 RSVPTE4.LSR5.ppp[2].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 51 RSVPTE4.LSR5.ppp[3].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 52 RSVPTE4.LSR5.ppp[3].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 53 RSVPTE4.LSR5.ppp[3].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 54 RSVPTE4.LSR5.ppp[4].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 55 RSVPTE4.LSR5.ppp[4].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 56 RSVPTE4.LSR5.ppp[4].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 57 RSVPTE4.LSR6.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 58 RSVPTE4.LSR6.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 59 RSVPTE4.LSR6.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 60 RSVPTE4.LSR6.ppp[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 61 RSVPTE4.LSR6.ppp[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 62 RSVPTE4.LSR6.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 63 RSVPTE4.LSR7.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 64 RSVPTE4.LSR7.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 65 RSVPTE4.LSR7.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 66 RSVPTE4.LSR7.ppp[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 67 RSVPTE4.LSR7.ppp[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 68 RSVPTE4.LSR7.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 69 RSVPTE4.host1.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 70 RSVPTE4.host1.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 71 RSVPTE4.host1.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 72 RSVPTE4.host1.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 73 RSVPTE4.host1.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 74 RSVPTE4.host1.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 75 RSVPTE4.host2.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 76 RSVPTE4.host2.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 77 RSVPTE4.host2.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 78 RSVPTE4.host2.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 79 RSVPTE4.host2.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 80 RSVPTE4.host2.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 81 RSVPTE4.host3.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 82 RSVPTE4.host3.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 83 RSVPTE4.host3.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 84 RSVPTE4.host3.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 85 RSVPTE4.host3.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 86 RSVPTE4.host3.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 87 RSVPTE4.host4.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 88 RSVPTE4.host4.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 89 RSVPTE4.host4.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 90 RSVPTE4.host4.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 91 RSVPTE4.host4.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 92 RSVPTE4.host4.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 93 RSVPTE4.host5.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 94 RSVPTE4.host5.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 95 RSVPTE4.host5.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 96 RSVPTE4.host5.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 97 RSVPTE4.host5.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 98 RSVPTE4.host5.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 99 RSVPTE4.LSR5.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 100 RSVPTE4.LSR5.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 101 RSVPTE4.LSR5.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 102 RSVPTE4.LSR5.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 103 RSVPTE4.LSR5.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 104 RSVPTE4.LSR5.ppp[3].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 105 RSVPTE4.LSR5.ppp[3].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 106 RSVPTE4.LSR5.ppp[3].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 107 RSVPTE4.LSR5.ppp[3].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 108 RSVPTE4.LSR5.ppp[3].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 109 RSVPTE4.LSR5.ppp[4].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 110 RSVPTE4.LSR5.ppp[4].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 111 RSVPTE4.LSR5.ppp[4].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 112 RSVPTE4.LSR5.ppp[4].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 113 RSVPTE4.LSR5.ppp[4].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 114 RSVPTE4.LSR4.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 115 RSVPTE4.LSR4.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 116 RSVPTE4.LSR4.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 117 RSVPTE4.LSR4.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 118 RSVPTE4.LSR4.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 119 RSVPTE4.LSR4.ppp[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 120 RSVPTE4.LSR4.ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 121 RSVPTE4.LSR4.ppp[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 122 RSVPTE4.LSR4.ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 123 RSVPTE4.LSR4.ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 124 RSVPTE4.LSR4.ppp[2].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 125 RSVPTE4.LSR4.ppp[2].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 126 RSVPTE4.LSR4.ppp[2].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 127 RSVPTE4.LSR4.ppp[2].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 128 RSVPTE4.LSR4.ppp[2].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 129 RSVPTE4.LSR6.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 130 RSVPTE4.LSR6.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 131 RSVPTE4.LSR6.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 132 RSVPTE4.LSR6.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 133 RSVPTE4.LSR6.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 134 RSVPTE4.LSR6.ppp[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 135 RSVPTE4.LSR6.ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 136 RSVPTE4.LSR6.ppp[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 137 RSVPTE4.LSR6.ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 138 RSVPTE4.LSR6.ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 139 RSVPTE4.LSR7.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 140 RSVPTE4.LSR7.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 141 RSVPTE4.LSR7.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 142 RSVPTE4.LSR7.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 143 RSVPTE4.LSR7.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 144 RSVPTE4.LSR7.ppp[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 145 RSVPTE4.LSR7.ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 146 RSVPTE4.LSR7.ppp[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 147 RSVPTE4.LSR7.ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 148 RSVPTE4.LSR7.ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 149 RSVPTE4.LSR1.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 150 RSVPTE4.LSR1.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 151 RSVPTE4.LSR1.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 152 RSVPTE4.LSR1.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 153 RSVPTE4.LSR1.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 154 RSVPTE4.LSR1.ppp[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 155 RSVPTE4.LSR1.ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 156 RSVPTE4.LSR1.ppp[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 157 RSVPTE4.LSR1.ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 158 RSVPTE4.LSR1.ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 159 RSVPTE4.host1.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 160 RSVPTE4.host2.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 161 RSVPTE4.host5.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 162 RSVPTE4.host1.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 163 RSVPTE4.host2.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 164 RSVPTE4.host5.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 165 RSVPTE4.host1.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 166 RSVPTE4.host1.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 167 RSVPTE4.host1.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 168 RSVPTE4.host1.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 169 RSVPTE4.host1.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 170 RSVPTE4.host2.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 171 RSVPTE4.host2.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 172 RSVPTE4.host2.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 173 RSVPTE4.host2.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 174 RSVPTE4.host2.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 175 RSVPTE4.host5.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 176 RSVPTE4.host5.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 177 RSVPTE4.host5.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 178 RSVPTE4.host5.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 179 RSVPTE4.host5.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 180 RSVPTE4.LSR4.ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 181 RSVPTE4.LSR4.ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 182 RSVPTE4.LSR2.ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 183 RSVPTE4.LSR2.ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 184 RSVPTE4.LSR5.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 185 RSVPTE4.LSR5.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 186 RSVPTE4.LSR3.ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 187 RSVPTE4.LSR3.ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 188 RSVPTE4.LSR2.ppp[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 189 RSVPTE4.LSR2.ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 190 RSVPTE4.LSR2.ppp[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 191 RSVPTE4.LSR2.ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 192 RSVPTE4.LSR2.ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 193 RSVPTE4.LSR2.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 194 RSVPTE4.LSR2.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 195 RSVPTE4.LSR2.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 196 RSVPTE4.LSR2.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 197 RSVPTE4.LSR2.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 198 RSVPTE4.LSR2.ppp[2].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 199 RSVPTE4.LSR2.ppp[2].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 200 RSVPTE4.LSR2.ppp[2].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 201 RSVPTE4.LSR2.ppp[2].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 202 RSVPTE4.LSR2.ppp[2].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 203 RSVPTE4.LSR3.ppp[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 204 RSVPTE4.LSR3.ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 205 RSVPTE4.LSR3.ppp[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 206 RSVPTE4.LSR3.ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 207 RSVPTE4.LSR3.ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 208 RSVPTE4.LSR3.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 209 RSVPTE4.LSR3.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 210 RSVPTE4.LSR3.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 211 RSVPTE4.LSR3.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 212 RSVPTE4.LSR3.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 213 RSVPTE4.LSR3.ppp[2].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 214 RSVPTE4.LSR3.ppp[2].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 215 RSVPTE4.LSR3.ppp[2].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 216 RSVPTE4.LSR3.ppp[2].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 217 RSVPTE4.LSR3.ppp[2].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 218 RSVPTE4.LSR6.ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 219 RSVPTE4.LSR6.ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 220 RSVPTE4.LSR7.ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 221 RSVPTE4.LSR7.ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 222 RSVPTE4.LSR3.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 223 RSVPTE4.LSR3.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 224 RSVPTE4.LSR2.ppp[2].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 225 RSVPTE4.LSR2.ppp[2].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 226 RSVPTE4.LSR5.ppp[3].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 227 RSVPTE4.LSR5.ppp[3].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 228 RSVPTE4.LSR3.ppp[2].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 229 RSVPTE4.LSR3.ppp[2].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 230 RSVPTE4.LSR5.ppp[4].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 231 RSVPTE4.LSR5.ppp[4].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 232 RSVPTE4.LSR1.ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 233 RSVPTE4.LSR1.ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 234 RSVPTE4.LSR1.ppp[3].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 235 RSVPTE4.LSR1.ppp[3].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 236 RSVPTE4.LSR1.ppp[2].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 237 RSVPTE4.LSR1.ppp[2].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 238 RSVPTE4.LSR1.ppp[4].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 239 RSVPTE4.LSR1.ppp[4].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 240 RSVPTE4.LSR1.ipv4.ip packetDropNoRouteFound:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetDropReasonIsNoRouteFound(packetDropped)
+attr title "packet drop: no route found, packetBytes"
+vector 241 RSVPTE4.LSR1.ppp[3].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 242 RSVPTE4.LSR1.ppp[3].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 243 RSVPTE4.LSR1.ppp[3].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 244 RSVPTE4.LSR1.ppp[3].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 245 RSVPTE4.LSR1.ppp[3].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 246 RSVPTE4.LSR1.ppp[2].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 247 RSVPTE4.LSR1.ppp[2].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 248 RSVPTE4.LSR1.ppp[2].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 249 RSVPTE4.LSR1.ppp[2].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 250 RSVPTE4.LSR1.ppp[2].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 251 RSVPTE4.LSR1.ppp[4].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 252 RSVPTE4.LSR1.ppp[4].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 253 RSVPTE4.LSR1.ppp[4].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 254 RSVPTE4.LSR1.ppp[4].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 255 RSVPTE4.LSR1.ppp[4].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 256 RSVPTE4.LSR4.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 257 RSVPTE4.LSR4.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 258 RSVPTE4.LSR4.ppp[2].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 259 RSVPTE4.LSR4.ppp[2].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 260 RSVPTE4.LSR6.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 261 RSVPTE4.LSR6.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 262 RSVPTE4.LSR7.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 263 RSVPTE4.LSR7.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 264 RSVPTE4.host1.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 265 RSVPTE4.host1.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 266 RSVPTE4.host2.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 267 RSVPTE4.host2.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 268 RSVPTE4.host5.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 269 RSVPTE4.host5.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 270 RSVPTE4.LSR1.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 271 RSVPTE4.LSR1.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 272 RSVPTE4.LSR2.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 273 RSVPTE4.LSR2.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 274 RSVPTE4.LSR5.ppp[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 275 RSVPTE4.LSR5.ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 276 RSVPTE4.LSR5.ppp[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 277 RSVPTE4.LSR5.ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 278 RSVPTE4.LSR5.ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 279 RSVPTE4.host3.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 280 RSVPTE4.host3.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 281 RSVPTE4.host3.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 282 RSVPTE4.host3.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 283 RSVPTE4.host3.app[0] endToEndDelay:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "end-to-end delay"
+attr unit s
+vector 284 RSVPTE4.host3.app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number"
+vector 285 RSVPTE4.host1.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 286 RSVPTE4.host1.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 287 RSVPTE4.host2.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 288 RSVPTE4.host2.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 289 RSVPTE4.host5.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 290 RSVPTE4.host5.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 291 RSVPTE4.host3.app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+vector 292 RSVPTE4.LSR6.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 293 RSVPTE4.LSR6.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 294 RSVPTE4.LSR7.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 295 RSVPTE4.LSR7.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 296 RSVPTE4.LSR4.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 297 RSVPTE4.LSR4.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 298 RSVPTE4.LSR3.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 299 RSVPTE4.LSR3.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 300 RSVPTE4.LSR1.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 301 RSVPTE4.LSR1.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 302 RSVPTE4.LSR5.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 303 RSVPTE4.LSR5.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 304 RSVPTE4.LSR1.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 305 RSVPTE4.LSR1.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 306 RSVPTE4.LSR7.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 307 RSVPTE4.LSR7.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 308 RSVPTE4.LSR3.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 309 RSVPTE4.LSR3.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 310 RSVPTE4.LSR2.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 311 RSVPTE4.LSR4.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 312 RSVPTE4.LSR4.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 313 RSVPTE4.LSR5.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 314 RSVPTE4.LSR5.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 315 RSVPTE4.LSR5.ppp[3].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 316 RSVPTE4.LSR5.ppp[3].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 317 RSVPTE4.LSR5.ppp[4].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 318 RSVPTE4.LSR5.ppp[4].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 319 RSVPTE4.LSR2.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 320 RSVPTE4.LSR2.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 321 RSVPTE4.LSR2.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 322 RSVPTE4.LSR2.ppp[2].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 323 RSVPTE4.LSR2.ppp[2].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 324 RSVPTE4.LSR3.ppp[2].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 325 RSVPTE4.LSR3.ppp[2].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 326 RSVPTE4.LSR4.ppp[2].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 327 RSVPTE4.LSR4.ppp[2].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 328 RSVPTE4.LSR6.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 329 RSVPTE4.LSR6.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 330 RSVPTE4.LSR2.ppp[0].queue droppedPacketLengthsQueueOverflow:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetDropReasonIsQueueOverflow(packetDropped))
+attr title "dropped packet lengths: queue overflow"
+attr unit b
+vector 331 RSVPTE4.LSR1.ppp[0].queue droppedPacketLengthsQueueOverflow:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetDropReasonIsQueueOverflow(packetDropped))
+attr title "dropped packet lengths: queue overflow"
+attr unit b
+vector 332 RSVPTE4.LSR1.lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 333 RSVPTE4.LSR1.lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+0	82551 8285 0 32463 0 3.022173333333 327 0 10 373 2063
+1	90836 8637 0 32463 0 3.022173333333 327 0 16768 440336 3370552832
+2	99473 11588 0 32463 0 3.022173333333 494 0 1 247 247
+3	111061 27605 0 32481 0 3.0244 1140 0 3 643 881
+4	138666 29169 0 32481 0 3.0244 1140 0 3744 776712 1308347712
+5	167835 33748 0 32496 0 3.026573333333 1437 0 1 718 718
+6	201583 141 0 836 0 0.052173333333 9 0 0 0 0
+7	201724 141 0 836 0 0.052173333333 9 0 0 0 0
+8	201865 201 0 851 0 0.053013333333 9 0 1 4 4
+9	202066 141 0 835 0 0.052173333333 9 0 0 0 0
+10	202207 150 0 835 0 0.052173333333 9 0 0 0 0
+11	202357 210 0 850 0 0.053013333333 9 0 1 4 4
+12	202567 150 0 837 0 0.052173333333 9 0 0 0 0
+13	202717 150 0 837 0 0.052173333333 9 0 0 0 0
+14	202867 210 0 852 0 0.053013333333 9 0 1 4 4
+15	203077 2108 0 32219 0 2.99620541103 86 0 10 278 1934
+16	205185 2263 0 32219 0 2.99620541103 86 0 21696 389208 4927634880
+17	207448 2450 0 32221 0 2.997698744363 97 0 1 48 48
+18	209898 5050 0 32495 0 3.026537959627 233 0 2 7 9
+19	214948 5065 0 32495 0 3.026537959627 233 0 4928 11496 40193600
+20	220013 10865 0 32507 0 3.028764626294 447 0 1 223 223
+21	230878 1457 0 31865 0 2.957440227996 60 0 2 12 16
+22	232335 1483 0 31865 0 2.957440227996 60 0 7808 27848 131684928
+23	233818 2437 0 31866 0 2.957813561329 95 0 1 47 47
+24	236255 1461 0 31418 0 2.910209697334 60 0 4 26 64
+25	237716 1497 0 31418 0 2.910209697334 60 0 10848 56688 388687488
+26	239213 2429 0 31422 0 2.910583030667 95 0 1 47 47
+27	241642 14601 0 32449 0 3.021573333333 553 0 2 30 40
+28	256243 14664 0 32449 0 3.021573333333 553 0 9536 45352 225051456
+29	270907 28081 0 32476 0 3.023746666666 1057 0 1 528 528
+30	298988 5305 0 32510 0 3.0294 260 0 3 24 50
+31	304293 5346 0 32510 0 3.0294 260 0 17184 79880 887308864
+32	309639 11548 0 32510 0 3.0294 490 0 1 245 245
+33	321187 1320 0 31465 0 2.915103839377 54 0 3 17 35
+34	322507 1351 0 31465 0 2.915103839377 54 0 15456 64408 822783552
+35	323858 2178 0 31466 0 2.91547717271 85 0 1 42 42
+36	326036 21200 0 32506 0 3.028746666666 799 0 2 78 96
+37	347236 21377 0 32506 0 3.028746666666 799 0 3040 71616 100215936
+38	368613 39124 0 32506 0 3.028746666666 1468 0 1 734 734
+39	407737 1237 0 32264 0 3.001239999998 51 0 2 7 9
+40	408974 1251 0 32264 0 3.001239999998 51 0 1568 5416 6278720
+41	410225 2130 0 32270 0 3.001613333331 83 0 1 41 41
+42	412355 961 0 31103 0 2.876005161161 40 0 2 7 9
+43	413316 976 0 31103 0 2.876005161161 40 0 2624 6888 11439680
+44	414292 1576 0 31116 0 2.876378494494 61 0 1 30 30
+45	415868 29394 0 32489 0 3.026026666667 1103 0 1 216 216
+46	445262 30042 0 32489 0 3.026026666667 1103 0 1248 269568 336420864
+47	475304 45667 0 32498 0 3.0282 1765 0 1 882 882
+48	520971 50 0 0 0 0 5 0 0 0 0
+49	521021 50 0 0 0 0 5 0 0 0 0
+50	521071 10 0 0 0 0 1 0 0 0 0
+51	521081 1347 0 30989 0 2.863671228168 55 0 1 3 3
+52	522428 1354 0 30989 0 2.863671228168 55 0 1312 2784 2804736
+53	523782 2462 0 30995 0 2.864044561501 95 0 1 47 47
+54	526244 1382 0 31295 0 2.89672042099 57 0 1 4 4
+55	527626 1393 0 31295 0 2.89672042099 57 0 7072 11584 57683968
+56	529019 2487 0 31296 0 2.897093754323 97 0 1 48 48
+57	531506 1040 0 31957 0 2.968026666665 43 0 1 5 5
+58	532546 1052 0 31957 0 2.968026666665 43 0 1888 4320 5902464
+59	533598 1721 0 31964 0 2.968399999998 67 0 1 33 33
+60	535319 1254 0 31090 0 2.874044561501 51 0 1 4 4
+61	536573 1262 0 31090 0 2.874044561501 51 0 736 2376 1653312
+62	537835 2208 0 31093 0 2.874417894834 85 0 1 42 42
+63	540043 1046 0 31627 0 2.930776513444 44 0 1 3 3
+64	541089 1053 0 31627 0 2.930776513444 44 0 1888 2272 3639424
+65	542142 1868 0 31630 0 2.931149846777 73 0 1 36 36
+66	544010 6327 0 32453 0 3.021626666667 239 0 1 2 2
+67	550337 6331 0 32453 0 3.021626666667 239 0 736 904 569920
+68	556668 12460 0 32478 0 3.023853333334 465 0 1 232 232
+69	569128 5067 0 32437 0 3.02 307 0 0 0 0
+70	574195 5067 0 32437 0 3.02 307 0 0 0 0
+71	579262 13101 0 32457 0 3.022173333333 605 0 1 302 302
+72	592363 10 0 0 0 0 1 0 0 0 0
+73	592373 10 0 0 0 0 1 0 0 0 0
+74	592383 10 0 0 0 0 1 0 0 0 0
+75	592393 5067 0 32438 0 3.02 307 0 0 0 0
+76	597460 5067 0 32438 0 3.02 307 0 0 0 0
+77	602527 13101 0 32458 0 3.022173333333 605 0 1 302 302
+78	615628 10 0 0 0 0 1 0 0 0 0
+79	615638 10 0 0 0 0 1 0 0 0 0
+80	615648 10 0 0 0 0 1 0 0 0 0
+81	615658 50 0 0 0 0 5 0 0 0 0
+82	615708 50 0 0 0 0 5 0 0 0 0
+83	615758 10 0 0 0 0 1 0 0 0 0
+84	615768 23734 0 32500 0 3.0282 880 0 879 386760 226770280
+85	639502 10 0 0 0 0 1 0 0 0 0
+86	639512 10 0 0 0 0 1 0 0 0 0
+87	639522 50 0 0 0 0 5 0 0 0 0
+88	639572 50 0 0 0 0 5 0 0 0 0
+89	639622 10 0 0 0 0 1 0 0 0 0
+90	639632 10 0 0 0 0 1 0 0 0 0
+91	639642 10 0 0 0 0 1 0 0 0 0
+92	639652 10 0 0 0 0 1 0 0 0 0
+93	639662 5067 0 32439 0 3.02 307 0 0 0 0
+94	644729 5067 0 32439 0 3.02 307 0 0 0 0
+95	649796 13101 0 32459 0 3.022173333333 605 0 1 302 302
+96	662897 10 0 0 0 0 1 0 0 0 0
+97	662907 10 0 0 0 0 1 0 0 0 0
+98	662917 10 0 0 0 0 1 0 0 0 0
+99	662927 847 17 31103 0.000583846691 2.876005161161 30 168 4768 20520 41301696
+100	663774 871 17 31103 0.000583846691 2.876005161161 30 0 0.003604540504 0.009174691992 2.2082059612818e-05
+101	664645 877 17 31103 0.000583846691 2.876005161161 30 168 4768 20520 41301696
+102	665522 847 17 31103 0.000583846691 2.876005161161 30 21 596 2565 645339
+103	666369 847 17 31103 0.000583846691 2.876005161161 30 28 603 2775 682719
+104	667216 1367 18 30989 0.000583846691 2.863671228168 47 168 5920 39368 79411904
+105	668583 1311 18 30989 0.000583846691 2.863671228168 47 0 0.00892772235 0.010141055684 8.0671515248387e-05
+106	669894 1374 18 30989 0.000583846691 2.863671228168 47 168 5920 39368 79411904
+107	671268 1327 18 30989 0.000583846691 2.863671228168 47 21 740 4921 1240811
+108	672595 1327 18 30989 0.000583846691 2.863671228168 47 28 747 5250 1312008
+109	673922 1382 19 31295 0.000583846691 2.89672042099 48 168 7072 41256 94920384
+110	675304 1330 19 31295 0.000583846691 2.89672042099 48 0 0.00124772235 0.003160752709 2.9199182337063e-06
+111	676634 1382 19 31295 0.000583846691 2.89672042099 48 168 7072 41256 94920384
+112	678016 1334 19 31295 0.000583846691 2.89672042099 48 21 884 5157 1483131
+113	679350 1334 19 31295 0.000583846691 2.89672042099 48 28 891 5493 1557681
+114	680684 1226 27 31465 0.004851281637 2.915103839377 42 168 12000 40880 183448576
+115	681910 1195 27 31465 0.004851281637 2.915103839377 42 0 0.02604 0.06096324828 0.0013690171320691
+116	683105 1225 27 31465 0.004851281637 2.915103839377 42 168 12000 40880 183448576
+117	684330 1183 27 31465 0.004851281637 2.915103839377 42 21 1500 5110 2866384
+118	685513 1183 27 31465 0.004851281637 2.915103839377 42 28 1507 5404 2939982
+119	686696 22456 28 32506 0.004851281637 3.028746666666 734 168 4768 901064 1146535616
+120	709152 21022 28 32506 0.004851281637 3.028746666666 734 0 0.003383418387 0.069367886759 0.00012995664598463
+121	730174 22466 28 32506 0.004851281637 3.028746666666 734 168 4768 901064 1146535616
+122	752640 21733 28 32506 0.004851281637 3.028746666666 734 21 596 112633 17914619
+123	774373 21733 28 32506 0.004851281637 3.028746666666 734 28 603 117771 19527447
+124	796106 1190 29 32264 0.004851281637 3.001239999998 41 168 12000 39512 176987584
+125	797296 1157 29 32264 0.004851281637 3.001239999998 41 0 0.020093333333 0.024459829893 0.00040903335388843
+126	798453 1190 29 32264 0.004851281637 3.001239999998 41 168 12000 39512 176987584
+127	799643 1149 29 32264 0.004851281637 3.001239999998 41 21 1500 4939 2765431
+128	800792 1149 29 32264 0.004851281637 3.001239999998 41 28 1507 5226 2836586
+129	801941 972 38 31957 0.006494463483 2.968026666665 33 168 7648 29072 90411008
+130	802913 944 38 31957 0.006494463483 2.968026666665 33 0 0.006541578638 0.010539672455 4.7301153721355e-05
+131	803857 965 38 31957 0.006494463483 2.968026666665 33 168 7648 29072 90411008
+132	804822 932 38 31957 0.006494463483 2.968026666665 33 21 956 3634 1412672
+133	805754 932 38 31957 0.006494463483 2.968026666665 33 28 963 3865 1465165
+134	806686 1228 39 31090 0.006494463483 2.874044561501 42 168 4192 28648 39258816
+135	807914 1185 39 31090 0.006494463483 2.874044561501 42 0 0.00132 0.004160000001 4.4309333352267e-06
+136	809099 1228 39 31090 0.006494463483 2.874044561501 42 168 4192 28648 39258816
+137	810327 1187 39 31090 0.006494463483 2.874044561501 42 21 524 3581 613419
+138	811514 1187 39 31090 0.006494463483 2.874044561501 42 28 531 3875 665611
+139	812701 1039 45 31627 0.007526741133 2.930776513444 36 168 11680 34160 164289536
+140	813740 993 45 31627 0.007526741133 2.930776513444 36 0 0.017584281563 0.019554855775 0.00031137260489218
+141	814733 1040 45 31627 0.007526741133 2.930776513444 36 168 11680 34160 164289536
+142	815773 1004 45 31627 0.007526741133 2.930776513444 36 21 1460 4270 2567024
+143	816777 1004 45 31627 0.007526741133 2.930776513444 36 28 1467 4522 2628568
+144	817781 7120 46 32453 0.007526741133 3.021626666667 232 168 4192 275944 361994944
+145	824901 6476 46 32453 0.007526741133 3.021626666667 232 0 0.00132 0.002266666667 2.6385777784089e-06
+146	831377 7120 46 32453 0.007526741133 3.021626666667 232 168 4192 275944 361994944
+147	838497 6889 46 32453 0.007526741133 3.021626666667 232 21 524 34493 5656171
+148	845386 6889 46 32453 0.007526741133 3.021626666667 232 28 531 36117 6150441
+149	852275 7648 52 32463 0.007958745046 3.022173333333 251 168 12000 303224 516215360
+150	859923 7716 52 32463 0.007958745046 3.022173333333 247 0 0.121200796742 1.767694721024 0.12589583083934
+151	867639 7543 52 32463 0.007958745046 3.022173333333 247 168 12000 300848 514562048
+152	875182 7298 52 32463 0.007958745046 3.022173333333 247 21 1500 37606 8040032
+153	882480 7298 52 32463 0.007958745046 3.022173333333 247 28 1507 39335 8578619
+154	889778 22007 53 32467 0.007958745046 3.022173333333 718 168 6496 890872 1154910656
+155	911785 23702 53 32481 0.007958745046 3.0244 718 0 0.00463129296 1.134552054832 0.003477912296022
+156	935487 20432 53 32481 0.007958745046 3.0244 718 168 6496 890872 1154910656
+157	955919 19715 53 32481 0.007958745046 3.0244 718 21 812 111359 18045479
+158	975634 19715 53 32481 0.007958745046 3.0244 718 28 819 116385 19639687
+159	995349 5923 61 32428 0.01 3.02 302 128 128 38656 4947968
+160	1001272 5923 62 32429 0.01 3.02 302 128 128 38656 4947968
+161	1007195 5923 63 32430 0.01 3.02 302 128 128 38656 4947968
+162	1013118 5923 65 32431 0.01 3.02 302 136 136 41072 5585792
+163	1019041 5923 67 32432 0.01 3.02 302 136 136 41072 5585792
+164	1024964 5923 69 32433 0.01 3.02 302 136 136 41072 5585792
+165	1030887 6225 73 32437 0.01 3.02 302 1248 1248 376896 470366208
+166	1037112 5319 73 32437 0.01 3.02 302 0 0 0 0
+167	1042431 6225 73 32437 0.01 3.02 302 1248 1248 376896 470366208
+168	1048656 5923 73 32437 0.01 3.02 302 156 156 47112 7349472
+169	1054579 5923 73 32437 0.01 3.02 302 163 163 49226 8023838
+170	1060502 6225 74 32438 0.01 3.02 302 1248 1248 376896 470366208
+171	1066727 5319 74 32438 0.01 3.02 302 0 0 0 0
+172	1072046 6225 74 32438 0.01 3.02 302 1248 1248 376896 470366208
+173	1078271 5923 74 32438 0.01 3.02 302 156 156 47112 7349472
+174	1084194 5923 74 32438 0.01 3.02 302 163 163 49226 8023838
+175	1090117 6225 75 32439 0.01 3.02 302 1248 1248 376896 470366208
+176	1096342 5319 75 32439 0.01 3.02 302 0 0 0 0
+177	1101661 6225 75 32439 0.01 3.02 302 1248 1248 376896 470366208
+178	1107886 5923 75 32439 0.01 3.02 302 156 156 47112 7349472
+179	1113809 5923 75 32439 0.01 3.02 302 163 163 49226 8023838
+180	1119732 847 76 31149 0.010743846691 2.881378494494 30 28 603 2775 682719
+181	1120579 847 76 31149 0.010743846691 2.881378494494 30 21 596 2565 645339
+182	1121426 1170 92 31522 0.013091281637 2.92047717271 42 28 1507 5404 2939982
+183	1122596 1170 92 31522 0.013091281637 2.92047717271 42 21 1500 5110 2866384
+184	1123766 21678 93 32483 0.013091281637 3.025919999999 732 28 603 117441 19472989
+185	1145444 21678 93 32483 0.013091281637 3.025919999999 732 21 596 112317 17864683
+186	1167122 1153 94 32319 0.013091281637 3.006613333331 41 28 1507 5226 2836586
+187	1168275 1153 94 32319 0.013091281637 3.006613333331 41 21 1500 4939 2765431
+188	1169428 5738 122 32495 0.013091281637 3.026537959627 223 168 3616 267696 352491520
+189	1175166 5160 122 32495 0.013091281637 3.026537959627 223 0 0.006556818154 0.010305391004 4.676007285677e-05
+190	1180326 5745 122 32495 0.013091281637 3.026537959627 223 168 3616 267696 352491520
+191	1186071 5523 122 32495 0.013091281637 3.026537959627 223 21 452 33462 5507680
+192	1191594 5523 122 32495 0.013091281637 3.026537959627 223 28 459 35023 5987075
+193	1197117 1575 123 32219 0.013091281637 2.99620541103 55 168 12000 52240 202015872
+194	1198692 1552 123 32219 0.013091281637 2.99620541103 48 0 0.150665869924 1.58102807402 0.16367339273346
+195	1200244 1362 123 32219 0.013091281637 2.99620541103 48 168 12000 47656 198737472
+196	1201606 1314 123 32219 0.013091281637 2.99620541103 48 21 1500 5957 3105273
+197	1202920 1314 123 32219 0.013091281637 2.99620541103 48 28 1507 6293 3191023
+198	1204234 1348 124 31865 0.013091281637 2.957440227996 47 168 4768 39856 75954176
+199	1205582 1355 124 31865 0.013091281637 2.957440227996 47 0 0.01185219543 0.025590154697 0.00020742608227411
+200	1206937 1355 124 31865 0.013091281637 2.957440227996 47 168 4768 39856 75954176
+201	1208292 1309 124 31865 0.013091281637 2.957440227996 47 21 596 4982 1186784
+202	1209601 1309 124 31865 0.013091281637 2.957440227996 47 28 603 5311 1258835
+203	1210910 16114 128 32449 0.013091281637 3.021573333333 528 168 6496 646584 848255424
+204	1227024 14808 128 32449 0.013091281637 3.021573333333 528 0 0.015484540504 0.041806888088 0.00030684825160669
+205	1241832 16121 128 32449 0.013091281637 3.021573333333 528 168 6496 646584 848255424
+206	1257953 15593 128 32449 0.013091281637 3.021573333333 528 21 812 80823 13253991
+207	1273546 15593 128 32449 0.013091281637 3.021573333333 528 28 819 84519 14411385
+208	1289139 1368 129 31418 0.013091281637 2.910209697334 47 168 6496 42832 117680128
+209	1290507 1357 129 31418 0.013091281637 2.910209697334 47 0 0.021334898355 0.085630933591 0.0014196074173911
+210	1291864 1354 129 31418 0.013091281637 2.910209697334 47 168 6496 42832 117680128
+211	1293218 1307 129 31418 0.013091281637 2.910209697334 47 21 812 5354 1838752
+212	1294525 1307 129 31418 0.013091281637 2.910209697334 47 28 819 5683 1916011
+213	1295832 5937 130 32510 0.013091281637 3.0294 245 168 7648 299312 465600512
+214	1301769 5366 130 32510 0.013091281637 3.0294 245 0 0.026134898355 0.088764266922 0.0016943149256401
+215	1307135 5937 130 32510 0.013091281637 3.0294 245 168 7648 299312 465600512
+216	1313072 5693 130 32510 0.013091281637 3.0294 245 21 956 37414 7275008
+217	1318765 5693 130 32510 0.013091281637 3.0294 245 28 963 39129 7810809
+218	1324458 1328 132 31085 0.015743846691 2.874044561501 47 28 747 5250 1312008
+219	1325786 1328 132 31085 0.015743846691 2.874044561501 47 21 740 4921 1240811
+220	1327114 1350 133 31381 0.015743846691 2.907093754323 48 28 891 5493 1557681
+221	1328464 1350 133 31381 0.015743846691 2.907093754323 48 21 884 5157 1483131
+222	1329814 19701 159 32508 0.018118745046 3.0294 717 28 819 116222 19613118
+223	1349515 19701 159 32508 0.018118745046 3.0294 717 21 812 111203 18021143
+224	1369216 925 182 32048 0.018774463483 2.978399999998 33 28 963 3865 1465165
+225	1370141 925 182 32048 0.018774463483 2.978399999998 33 21 956 3634 1412672
+226	1371066 1190 183 31190 0.018774463483 2.884417894834 42 28 531 3875 665611
+227	1372256 1190 183 31190 0.018774463483 2.884417894834 42 21 524 3581 613419
+228	1373446 1013 221 31714 0.019806741133 2.941149846777 36 28 1467 4522 2628568
+229	1374459 1013 221 31714 0.019806741133 2.941149846777 36 21 1460 4270 2567024
+230	1375472 6860 222 32477 0.019806741133 3.023853333334 231 28 531 35950 6122552
+231	1382332 6860 222 32477 0.019806741133 3.023853333334 231 21 524 34333 5630571
+232	1389192 1314 283 31469 0.021331281637 2.915583030667 47 28 819 5683 1916011
+233	1390506 1314 283 31469 0.021331281637 2.915583030667 47 21 812 5354 1838752
+234	1391820 8953 290 32454 0.022173333333 3.022173333333 301 163 163 49063 7997269
+235	1400773 8953 290 32454 0.022173333333 3.022173333333 301 156 156 46956 7325136
+236	1409726 8953 291 32455 0.022173333333 3.022173333333 301 163 163 49063 7997269
+237	1418679 8953 291 32455 0.022173333333 3.022173333333 301 156 156 46956 7325136
+238	1427632 8953 292 32456 0.022173333333 3.022173333333 301 163 163 49063 7997269
+239	1436585 8953 292 32456 0.022173333333 3.022173333333 301 156 156 46956 7325136
+240	1445538 336 299 828 0.022173333333 0.052173333333 12 156 156 1872 292032
+241	1445874 112 308 835 0.022173333333 0.052173333333 4 448 448 1792 802816
+242	1445986 104 308 835 0.022173333333 0.052173333333 4 0 0 0 0
+243	1446090 112 308 835 0.022173333333 0.052173333333 4 448 448 1792 802816
+244	1446202 108 308 835 0.022173333333 0.052173333333 4 56 56 224 12544
+245	1446310 108 308 835 0.022173333333 0.052173333333 4 63 63 252 15876
+246	1446418 112 309 836 0.022173333333 0.052173333333 4 448 448 1792 802816
+247	1446530 104 309 836 0.022173333333 0.052173333333 4 0 0 0 0
+248	1446634 112 309 836 0.022173333333 0.052173333333 4 448 448 1792 802816
+249	1446746 108 309 836 0.022173333333 0.052173333333 4 56 56 224 12544
+250	1446854 108 309 836 0.022173333333 0.052173333333 4 63 63 252 15876
+251	1446962 112 310 837 0.022173333333 0.052173333333 4 448 448 1792 802816
+252	1447074 104 310 837 0.022173333333 0.052173333333 4 0 0 0 0
+253	1447178 112 310 837 0.022173333333 0.052173333333 4 448 448 1792 802816
+254	1447290 108 310 837 0.022173333333 0.052173333333 4 56 56 224 12544
+255	1447398 108 310 837 0.022173333333 0.052173333333 4 63 63 252 15876
+256	1447506 6591 322 32473 0.024211281637 3.023306666667 222 28 459 34856 5959186
+257	1454097 6591 322 32473 0.024211281637 3.023306666667 222 21 452 33302 5482080
+258	1460688 15595 323 32502 0.024211281637 3.028746666666 528 28 819 84519 14411385
+259	1476283 15595 323 32502 0.024211281637 3.028746666666 528 21 812 80823 13253991
+260	1491878 1320 351 31950 0.026331281637 2.967813561329 47 28 603 5311 1258835
+261	1493198 1320 351 31950 0.026331281637 2.967813561329 47 21 596 4982 1186784
+262	1494518 7204 354 32450 0.026331281637 3.021626666667 243 28 963 38795 7755031
+263	1501722 7204 354 32450 0.026331281637 3.021626666667 243 21 956 37094 7223808
+264	1508926 108 518 977 0.033013333333 0.063013333333 4 63 63 252 15876
+265	1509034 108 518 977 0.033013333333 0.063013333333 4 56 56 224 12544
+266	1509142 108 519 978 0.033013333333 0.063013333333 4 63 63 252 15876
+267	1509250 108 519 978 0.033013333333 0.063013333333 4 56 56 224 12544
+268	1509358 108 520 979 0.033013333333 0.063013333333 4 63 63 252 15876
+269	1509466 108 520 979 0.033013333333 0.063013333333 4 56 56 224 12544
+270	1509574 1338 662 32377 0.041051281637 3.012698744363 48 28 1507 6293 3191023
+271	1510912 1338 662 32377 0.041051281637 3.012698744363 48 21 1500 5957 3105273
+272	1512250 6152 724 32493 0.043598745046 3.026537959627 245 28 1507 39001 8522841
+273	1518402 6152 724 32493 0.043598745046 3.026537959627 245 21 1500 37286 7988832
+274	1524554 27135 1253 32487 0.083693333332 3.025919999999 882 1248 1248 1100736 1373718528
+275	1551689 27186 1253 32489 0.083693333332 3.026026666667 882 0 0.001960000008 0.05730666692 5.7159466768853e-05
+276	1578875 27041 1253 32489 0.083693333332 3.026026666667 882 1248 1248 1100736 1373718528
+277	1605916 26159 1253 32489 0.083693333332 3.026026666667 882 156 156 137592 21464352
+278	1632075 26159 1253 32489 0.083693333332 3.026026666667 882 163 163 143766 23433858
+279	1658234 24711 1499 32497 0.095866666665 3.0282 879 163 163 143277 23354151
+280	1682945 24711 1499 32497 0.095866666665 3.0282 879 156 156 137124 21391344
+281	1707656 24711 1505 32500 0.095866666665 3.0282 879 136 136 119544 16257984
+282	1732367 24711 1507 32501 0.095866666665 3.0282 879 128 128 112512 14401536
+283	1757078 32916 1507 32501 0.095866666665 3.0282 879 0.045866666665 0.080373333333 46.928927258442 2.5460922889791
+284	1789994 24405 1507 32501 0.095866666665 3.0282 879 4 297 131851 26066459
+285	1814399 647 1640 32245 0.1 3 30 112320 124800 3731520 464291942400
+286	1815046 647 1640 32245 0.1 3 30 112320 124800 3731520 464291942400
+287	1815693 647 1641 32246 0.1 3 30 112320 124800 3731520 464291942400
+288	1816340 647 1641 32246 0.1 3 30 112320 124800 3731520 464291942400
+289	1816987 647 1642 32247 0.1 3 30 112320 124800 3731520 464291942400
+290	1817634 647 1642 32247 0.1 3 30 112320 124800 3731520 464291942400
+291	1818281 646 1647 32294 0.1 3 30 20480 317440 8908800 2725249024000
+292	1818927 536 1663 31957 0.1 2.9 29 0 204480 289040 43693305600
+293	1819463 536 1663 31957 0.1 2.9 29 0 204480 289040 43693305600
+294	1819999 535 1664 31627 0.1 2.9 29 0 233280 339920 57411270400
+295	1820534 535 1664 31627 0.1 2.9 29 0 233280 339920 57411270400
+296	1821069 647 1670 32297 0.1 3 30 241920 433280 8934800 2782076614400
+297	1821716 647 1670 32297 0.1 3 30 241920 433280 8934800 2782076614400
+298	1822363 647 1684 32269 0.1 3 30 124800 412880 6428400 1797373126400
+299	1823010 647 1684 32269 0.1 3 30 124800 412880 6428400 1797373126400
+300	1823657 647 1702 32286 0.1 3 30 245120 383440 8832880 2702547756800
+301	1824304 647 1702 32286 0.1 3 30 245120 383440 8832880 2702547756800
+302	1824951 646 1716 32250 0.1 3 30 74880 386880 10895040 4044370636800
+303	1825597 646 1716 32250 0.1 3 30 74880 386880 10895040 4044370636800
+304	1826243 624 1723 32260 0.1 3 30 0 294080 2992160 426758540800
+305	1826867 624 1743 32260 0.1 3 30 0 149840 2968400 382046496000
+306	1827491 625 1761 32274 0.1 3 30 0 129680 2721040 335496160000
+307	1828116 625 1761 32274 0.1 3 30 0 129680 2721040 335496160000
+308	1828741 542 1824 31418 0.1 2.9 29 0 253760 426640 71726483200
+309	1829283 542 1824 31418 0.1 2.9 29 0 253760 426640 71726483200
+310	1829825 545 1893 32219 0.1 2.9 29 0 147840 474880 50577113600
+311	1830370 541 1898 31465 0.1 2.9 29 0 271040 407120 78118342400
+312	1830911 541 1898 31465 0.1 2.9 29 0 271040 407120 78118342400
+313	1831452 518 1959 31103 0.1 2.8 28 0 128080 203520 17700748800
+314	1831970 518 1959 31103 0.1 2.8 28 0 128080 203520 17700748800
+315	1832488 520 1960 30989 0.1 2.8 28 0 213520 392000 53654720000
+316	1833008 520 1960 30989 0.1 2.8 28 0 213520 392000 53654720000
+317	1833528 521 1980 31295 0.1 2.8 28 0 232400 410880 61315315200
+318	1834049 521 1980 31295 0.1 2.8 28 0 232400 410880 61315315200
+319	1834570 545 2022 32219 0.1 2.9 29 0 314560 520720 109295084800
+320	1835115 617 2023 32317 0.1 3 30 0 142480 2638560 332462540800
+321	1835732 617 2023 32317 0.1 3 30 0 142480 2638560 332462540800
+322	1836349 544 2024 31865 0.1 2.9 29 0 204480 396880 50696236800
+323	1836893 544 2024 31865 0.1 2.9 29 0 204480 396880 50696236800
+324	1837437 628 2109 32336 0.1 3 30 0 282560 2954720 416137881600
+325	1838065 628 2109 32336 0.1 3 30 0 282560 2954720 416137881600
+326	1838693 554 2144 32264 0.1 3 30 0 259520 393440 71192614400
+327	1839247 554 2144 32264 0.1 3 30 0 259520 393440 71192614400
+328	1839801 521 2295 31090 0.1 2.8 28 0 101840 284800 17317209600
+329	1840322 521 2295 31090 0.1 2.8 28 0 101840 284800 17317209600
+330	1840843 203 2495 3388 0.138893754322 0.184644626294 7 168 736 4584 3278400
+331	1841046 116 2559 3295 0.141333754323 0.179712077697 4 168 736 2376 1653312
+332	1841162 29 14693 14693 1.102213333333 1.102213333333 1 25 25 25 625
+333	1841191 29 14693 14693 1.102213333333 1.102213333333 1 25 25 25 625
+0	1841220 26 32546 32546 3.032173333333 3.032173333333 1 0 0 0 0
+1	1841246 26 32546 32546 3.032173333333 3.032173333333 1 0 0 0 0
+2	1841272 45 32527 32546 3.03108 3.032173333333 2 0 1 1 1
+3	1841317 70 32548 32564 3.032173333333 3.0344 3 0 1 1 1
+4	1841387 73 32548 32564 3.032173333333 3.0344 3 0 1248 1248 1557504
+5	1841460 88 32548 32579 3.032173333333 3.036573333333 4 0 1 2 2
+18	1841548 20 32578 32578 3.03608 3.03608 1 0 0 0 0
+19	1841568 20 32578 32578 3.03608 3.03608 1 0 0 0 0
+20	1841588 20 32578 32578 3.03608 3.03608 1 1 1 1 1
+27	1841608 27 32532 32532 3.031573333333 3.031573333333 1 0 0 0 0
+28	1841635 27 32532 32532 3.031573333333 3.031573333333 1 0 0 0 0
+29	1841662 54 32532 32556 3.031573333333 3.033746666666 2 0 1 1 1
+32	1841716 27 32534 32534 3.031626666667 3.031626666667 1 0 0 0 0
+36	1841743 27 32559 32559 3.033764626294 3.033764626294 1 0 0 0 0
+37	1841770 27 32559 32559 3.033764626294 3.033764626294 1 0 0 0 0
+38	1841797 81 32526 32570 3.030919999999 3.035991292961 3 0 1 1 1
+45	1841878 108 32525 32572 3.030533333334 3.036026666667 4 0 1 1 1
+46	1841986 111 32525 32572 3.030533333334 3.036026666667 4 0 1248 1248 1557504
+47	1842097 135 32525 32572 3.030533333334 3.036026666667 5 0 1 3 3
+66	1842232 27 32536 32536 3.031626666667 3.031626666667 1 0 0 0 0
+67	1842259 27 32536 32536 3.031626666667 3.031626666667 1 0 0 0 0
+68	1842286 54 32536 32561 3.031626666667 3.033853333334 2 0 1 1 1
+69	1842340 17 32520 32520 3.03 3.03 1 0 0 0 0
+70	1842357 17 32520 32520 3.03 3.03 1 0 0 0 0
+71	1842374 44 32520 32540 3.03 3.032173333333 2 0 1 1 1
+75	1842418 17 32521 32521 3.03 3.03 1 0 0 0 0
+76	1842435 17 32521 32521 3.03 3.03 1 0 0 0 0
+77	1842452 44 32521 32541 3.03 3.032173333333 2 0 1 1 1
+84	1842496 58 32554 32574 3.032706666667 3.036026666667 2 880 881 1761 1550561
+93	1842554 17 32522 32522 3.03 3.03 1 0 0 0 0
+94	1842571 17 32522 32522 3.03 3.03 1 0 0 0 0
+95	1842588 44 32522 32542 3.03 3.032173333333 2 0 1 1 1
+119	1842632 31 32559 32559 3.033764626294 3.033764626294 1 1280 1280 1280 1638400
+120	1842663 28 32559 32559 3.033764626294 3.033764626294 1 0 0 0 0
+121	1842691 31 32559 32559 3.033764626294 3.033764626294 1 1280 1280 1280 1638400
+122	1842722 30 32559 32559 3.033764626294 3.033764626294 1 160 160 160 25600
+123	1842752 30 32559 32559 3.033764626294 3.033764626294 1 167 167 167 27889
+144	1842782 31 32536 32536 3.031626666667 3.031626666667 1 1280 1280 1280 1638400
+145	1842813 28 32536 32536 3.031626666667 3.031626666667 1 0 0 0 0
+146	1842841 31 32536 32536 3.031626666667 3.031626666667 1 1280 1280 1280 1638400
+147	1842872 30 32536 32536 3.031626666667 3.031626666667 1 160 160 160 25600
+148	1842902 30 32536 32536 3.031626666667 3.031626666667 1 167 167 167 27889
+149	1842932 31 32546 32546 3.032173333333 3.032173333333 1 1280 1280 1280 1638400
+150	1842963 28 32546 32546 3.032173333333 3.032173333333 1 0 0 0 0
+151	1842991 31 32546 32546 3.032173333333 3.032173333333 1 1280 1280 1280 1638400
+152	1843022 30 32546 32546 3.032173333333 3.032173333333 1 160 160 160 25600
+153	1843052 30 32546 32546 3.032173333333 3.032173333333 1 167 167 167 27889
+154	1843082 62 32548 32550 3.032173333333 3.032173333333 2 1248 1280 2528 3195904
+155	1843144 61 32548 32564 3.032173333333 3.0344 2 0 0.002226666667 0.002226666667 4.9580444459289e-06
+156	1843205 54 32548 32564 3.032173333333 3.0344 2 1248 1280 2528 3195904
+157	1843259 52 32548 32564 3.032173333333 3.0344 2 156 160 316 49936
+158	1843311 52 32548 32564 3.032173333333 3.0344 2 163 167 330 54458
+159	1843363 20 32511 32511 3.03 3.03 1 128 128 128 16384
+160	1843383 20 32512 32512 3.03 3.03 1 128 128 128 16384
+161	1843403 20 32513 32513 3.03 3.03 1 128 128 128 16384
+162	1843423 20 32514 32514 3.03 3.03 1 136 136 136 18496
+163	1843443 20 32515 32515 3.03 3.03 1 136 136 136 18496
+164	1843463 20 32516 32516 3.03 3.03 1 136 136 136 18496
+165	1843483 21 32520 32520 3.03 3.03 1 1248 1248 1248 1557504
+166	1843504 18 32520 32520 3.03 3.03 1 0 0 0 0
+167	1843522 21 32520 32520 3.03 3.03 1 1248 1248 1248 1557504
+168	1843543 20 32520 32520 3.03 3.03 1 156 156 156 24336
+169	1843563 20 32520 32520 3.03 3.03 1 163 163 163 26569
+170	1843583 21 32521 32521 3.03 3.03 1 1248 1248 1248 1557504
+171	1843604 18 32521 32521 3.03 3.03 1 0 0 0 0
+172	1843622 21 32521 32521 3.03 3.03 1 1248 1248 1248 1557504
+173	1843643 20 32521 32521 3.03 3.03 1 156 156 156 24336
+174	1843663 20 32521 32521 3.03 3.03 1 163 163 163 26569
+175	1843683 21 32522 32522 3.03 3.03 1 1248 1248 1248 1557504
+176	1843704 18 32522 32522 3.03 3.03 1 0 0 0 0
+177	1843722 21 32522 32522 3.03 3.03 1 1248 1248 1248 1557504
+178	1843743 20 32522 32522 3.03 3.03 1 156 156 156 24336
+179	1843763 20 32522 32522 3.03 3.03 1 163 163 163 26569
+184	1843783 60 32523 32565 3.030533333334 3.035919999999 2 163 167 330 54458
+185	1843843 60 32523 32565 3.030533333334 3.035919999999 2 156 160 316 49936
+188	1843903 24 32578 32578 3.03608 3.03608 1 1280 1280 1280 1638400
+189	1843927 21 32578 32578 3.03608 3.03608 1 0 0 0 0
+190	1843948 24 32578 32578 3.03608 3.03608 1 1280 1280 1280 1638400
+191	1843972 23 32578 32578 3.03608 3.03608 1 160 160 160 25600
+192	1843995 23 32578 32578 3.03608 3.03608 1 167 167 167 27889
+203	1844018 31 32532 32532 3.031573333333 3.031573333333 1 1248 1248 1248 1557504
+204	1844049 28 32532 32532 3.031573333333 3.031573333333 1 0 0 0 0
+205	1844077 31 32532 32532 3.031573333333 3.031573333333 1 1248 1248 1248 1557504
+206	1844108 30 32532 32532 3.031573333333 3.031573333333 1 156 156 156 24336
+207	1844138 30 32532 32532 3.031573333333 3.031573333333 1 163 163 163 26569
+222	1844168 30 32528 32528 3.031573333333 3.031573333333 1 163 163 163 26569
+223	1844198 30 32528 32528 3.031573333333 3.031573333333 1 156 156 156 24336
+230	1844228 30 32560 32560 3.033853333334 3.033853333334 1 167 167 167 27889
+231	1844258 30 32560 32560 3.033853333334 3.033853333334 1 160 160 160 25600
+234	1844288 30 32537 32537 3.032173333333 3.032173333333 1 163 163 163 26569
+235	1844318 30 32537 32537 3.032173333333 3.032173333333 1 156 156 156 24336
+236	1844348 30 32538 32538 3.032173333333 3.032173333333 1 163 163 163 26569
+237	1844378 30 32538 32538 3.032173333333 3.032173333333 1 156 156 156 24336
+238	1844408 30 32539 32539 3.032173333333 3.032173333333 1 163 163 163 26569
+239	1844438 30 32539 32539 3.032173333333 3.032173333333 1 156 156 156 24336
+256	1844468 30 32557 32557 3.033764626294 3.033764626294 1 167 167 167 27889
+257	1844498 30 32557 32557 3.033764626294 3.033764626294 1 160 160 160 25600
+262	1844528 30 32533 32533 3.031626666667 3.031626666667 1 167 167 167 27889
+263	1844558 30 32533 32533 3.031626666667 3.031626666667 1 160 160 160 25600
+272	1844588 23 32576 32576 3.03608 3.03608 1 167 167 167 27889
+273	1844611 23 32576 32576 3.03608 3.03608 1 160 160 160 25600
+274	1844634 93 32525 32569 3.030533333334 3.035919999999 3 1248 1248 3744 4672512
+275	1844727 97 32525 32572 3.030533333334 3.036026666667 3 0 0.000106666668 0.000106666668 1.1377778062222e-08
+276	1844824 93 32525 32572 3.030533333334 3.036026666667 3 1248 1248 3744 4672512
+277	1844917 90 32525 32572 3.030533333334 3.036026666667 3 156 156 468 73008
+278	1845007 90 32525 32572 3.030533333334 3.036026666667 3 163 163 489 79707
+279	1845097 60 32551 32571 3.032706666667 3.036026666667 2 163 163 326 53138
+280	1845157 60 32551 32571 3.032706666667 3.036026666667 2 156 156 312 48672
+281	1845217 60 32554 32574 3.032706666667 3.036026666667 2 136 136 272 36992
+282	1845277 60 32555 32575 3.032706666667 3.036026666667 2 128 128 256 32768
+283	1845337 82 32555 32575 3.032706666667 3.036026666667 2 0.056026666667 0.062706666667 0.118733333334 0.0070711134223014
+284	1845419 60 32555 32575 3.032706666667 3.036026666667 2 296 297 593 175825
+0	1845479 26 32629 32629 3.042173333333 3.042173333333 1 0 0 0 0
+1	1845505 26 32629 32629 3.042173333333 3.042173333333 1 0 0 0 0
+2	1845531 45 32610 32629 3.04108 3.042173333333 2 0 1 1 1
+3	1845576 70 32631 32647 3.042173333333 3.0444 3 0 1 1 1
+4	1845646 73 32631 32647 3.042173333333 3.0444 3 0 1248 1248 1557504
+5	1845719 62 32631 32647 3.042173333333 3.0444 3 0 1 2 2
+20	1845781 27 32585 32585 3.038306666667 3.038306666667 1 0 0 0 0
+27	1845808 27 32615 32615 3.041573333333 3.041573333333 1 0 0 0 0
+28	1845835 27 32615 32615 3.041573333333 3.041573333333 1 0 0 0 0
+29	1845862 54 32615 32642 3.041573333333 3.043746666666 2 0 1 1 1
+30	1845916 19 32593 32593 3.0394 3.0394 1 0 0 0 0
+31	1845935 19 32593 32593 3.0394 3.0394 1 0 0 0 0
+32	1845954 46 32593 32617 3.0394 3.041626666667 2 0 1 1 1
+36	1846000 54 32590 32641 3.038746666666 3.043306666667 2 0 0 0 0
+37	1846054 54 32590 32641 3.038746666666 3.043306666667 2 0 0 0 0
+38	1846108 108 32590 32648 3.038746666666 3.045533333334 4 0 1 2 2
+45	1846216 54 32609 32646 3.040991292961 3.043853333334 2 0 0 0 0
+46	1846270 54 32609 32646 3.040991292961 3.043853333334 2 0 0 0 0
+47	1846324 100 32581 32646 3.0382 3.043853333334 4 0 1 2 2
+66	1846424 27 32619 32619 3.041626666667 3.041626666667 1 0 0 0 0
+67	1846451 27 32619 32619 3.041626666667 3.041626666667 1 0 0 0 0
+68	1846478 54 32619 32644 3.041626666667 3.043853333334 2 0 1 1 1
+69	1846532 17 32603 32603 3.04 3.04 1 0 0 0 0
+70	1846549 17 32603 32603 3.04 3.04 1 0 0 0 0
+71	1846566 44 32603 32623 3.04 3.042173333333 2 0 1 1 1
+75	1846610 17 32604 32604 3.04 3.04 1 0 0 0 0
+76	1846627 17 32604 32604 3.04 3.04 1 0 0 0 0
+77	1846644 44 32604 32624 3.04 3.042173333333 2 0 1 1 1
+84	1846688 50 32583 32636 3.0382 3.042706666667 2 882 883 1765 1557613
+93	1846738 17 32605 32605 3.04 3.04 1 0 0 0 0
+94	1846755 17 32605 32605 3.04 3.04 1 0 0 0 0
+95	1846772 44 32605 32625 3.04 3.042173333333 2 0 1 1 1
+119	1846816 62 32590 32641 3.038746666666 3.043306666667 2 1248 1280 2528 3195904
+120	1846878 56 32590 32641 3.038746666666 3.043306666667 2 0 0 0 0
+121	1846934 62 32590 32641 3.038746666666 3.043306666667 2 1248 1280 2528 3195904
+122	1846996 60 32590 32641 3.038746666666 3.043306666667 2 156 160 316 49936
+123	1847056 60 32590 32641 3.038746666666 3.043306666667 2 163 167 330 54458
+144	1847116 31 32619 32619 3.041626666667 3.041626666667 1 1280 1280 1280 1638400
+145	1847147 28 32619 32619 3.041626666667 3.041626666667 1 0 0 0 0
+146	1847175 31 32619 32619 3.041626666667 3.041626666667 1 1280 1280 1280 1638400
+147	1847206 30 32619 32619 3.041626666667 3.041626666667 1 160 160 160 25600
+148	1847236 30 32619 32619 3.041626666667 3.041626666667 1 167 167 167 27889
+149	1847266 31 32629 32629 3.042173333333 3.042173333333 1 1280 1280 1280 1638400
+150	1847297 28 32629 32629 3.042173333333 3.042173333333 1 0 0 0 0
+151	1847325 31 32629 32629 3.042173333333 3.042173333333 1 1280 1280 1280 1638400
+152	1847356 30 32629 32629 3.042173333333 3.042173333333 1 160 160 160 25600
+153	1847386 30 32629 32629 3.042173333333 3.042173333333 1 167 167 167 27889
+154	1847416 62 32631 32633 3.042173333333 3.042173333333 2 1248 1280 2528 3195904
+155	1847478 61 32631 32647 3.042173333333 3.0444 2 0 0.002226666667 0.002226666667 4.9580444459289e-06
+156	1847539 54 32631 32647 3.042173333333 3.0444 2 1248 1280 2528 3195904
+157	1847593 52 32631 32647 3.042173333333 3.0444 2 156 160 316 49936
+158	1847645 52 32631 32647 3.042173333333 3.0444 2 163 167 330 54458
+159	1847697 20 32594 32594 3.04 3.04 1 128 128 128 16384
+160	1847717 20 32595 32595 3.04 3.04 1 128 128 128 16384
+161	1847737 20 32596 32596 3.04 3.04 1 128 128 128 16384
+162	1847757 20 32597 32597 3.04 3.04 1 136 136 136 18496
+163	1847777 20 32598 32598 3.04 3.04 1 136 136 136 18496
+164	1847797 20 32599 32599 3.04 3.04 1 136 136 136 18496
+165	1847817 21 32603 32603 3.04 3.04 1 1248 1248 1248 1557504
+166	1847838 18 32603 32603 3.04 3.04 1 0 0 0 0
+167	1847856 21 32603 32603 3.04 3.04 1 1248 1248 1248 1557504
+168	1847877 20 32603 32603 3.04 3.04 1 156 156 156 24336
+169	1847897 20 32603 32603 3.04 3.04 1 163 163 163 26569
+170	1847917 21 32604 32604 3.04 3.04 1 1248 1248 1248 1557504
+171	1847938 18 32604 32604 3.04 3.04 1 0 0 0 0
+172	1847956 21 32604 32604 3.04 3.04 1 1248 1248 1248 1557504
+173	1847977 20 32604 32604 3.04 3.04 1 156 156 156 24336
+174	1847997 20 32604 32604 3.04 3.04 1 163 163 163 26569
+175	1848017 21 32605 32605 3.04 3.04 1 1248 1248 1248 1557504
+176	1848038 18 32605 32605 3.04 3.04 1 0 0 0 0
+177	1848056 21 32605 32605 3.04 3.04 1 1248 1248 1248 1557504
+178	1848077 20 32605 32605 3.04 3.04 1 156 156 156 24336
+179	1848097 20 32605 32605 3.04 3.04 1 163 163 163 26569
+184	1848117 30 32607 32607 3.040991292961 3.040991292961 1 167 167 167 27889
+185	1848147 30 32607 32607 3.040991292961 3.040991292961 1 160 160 160 25600
+203	1848177 31 32615 32615 3.041573333333 3.041573333333 1 1248 1248 1248 1557504
+204	1848208 28 32615 32615 3.041573333333 3.041573333333 1 0 0 0 0
+205	1848236 31 32615 32615 3.041573333333 3.041573333333 1 1248 1248 1248 1557504
+206	1848267 30 32615 32615 3.041573333333 3.041573333333 1 156 156 156 24336
+207	1848297 30 32615 32615 3.041573333333 3.041573333333 1 163 163 163 26569
+213	1848327 23 32593 32593 3.0394 3.0394 1 1280 1280 1280 1638400
+214	1848350 20 32593 32593 3.0394 3.0394 1 0 0 0 0
+215	1848370 23 32593 32593 3.0394 3.0394 1 1280 1280 1280 1638400
+216	1848393 22 32593 32593 3.0394 3.0394 1 160 160 160 25600
+217	1848415 22 32593 32593 3.0394 3.0394 1 167 167 167 27889
+222	1848437 52 32591 32611 3.0394 3.041573333333 2 163 167 330 54458
+223	1848489 52 32591 32611 3.0394 3.041573333333 2 156 160 316 49936
+230	1848541 30 32643 32643 3.043853333334 3.043853333334 1 167 167 167 27889
+231	1848571 30 32643 32643 3.043853333334 3.043853333334 1 160 160 160 25600
+234	1848601 30 32620 32620 3.042173333333 3.042173333333 1 163 163 163 26569
+235	1848631 30 32620 32620 3.042173333333 3.042173333333 1 156 156 156 24336
+236	1848661 30 32621 32621 3.042173333333 3.042173333333 1 163 163 163 26569
+237	1848691 30 32621 32621 3.042173333333 3.042173333333 1 156 156 156 24336
+238	1848721 30 32622 32622 3.042173333333 3.042173333333 1 163 163 163 26569
+239	1848751 30 32622 32622 3.042173333333 3.042173333333 1 156 156 156 24336
+256	1848781 30 32639 32639 3.043306666667 3.043306666667 1 167 167 167 27889
+257	1848811 30 32639 32639 3.043306666667 3.043306666667 1 160 160 160 25600
+258	1848841 30 32586 32586 3.038746666666 3.038746666666 1 163 163 163 26569
+259	1848871 30 32586 32586 3.038746666666 3.038746666666 1 156 156 156 24336
+262	1848901 30 32616 32616 3.041626666667 3.041626666667 1 167 167 167 27889
+263	1848931 30 32616 32616 3.041626666667 3.041626666667 1 160 160 160 25600
+274	1848961 62 32609 32646 3.040991292961 3.043853333334 2 1248 1248 2496 3115008
+275	1849023 56 32609 32646 3.040991292961 3.043853333334 2 0 0 0 0
+276	1849079 62 32609 32646 3.040991292961 3.043853333334 2 1248 1248 2496 3115008
+277	1849141 60 32609 32646 3.040991292961 3.043853333334 2 156 156 312 48672
+278	1849201 60 32609 32646 3.040991292961 3.043853333334 2 163 163 326 53138
+279	1849261 52 32580 32634 3.0382 3.042706666667 2 163 163 326 53138
+280	1849313 52 32580 32634 3.0382 3.042706666667 2 156 156 312 48672
+281	1849365 52 32583 32636 3.0382 3.042706666667 2 136 136 272 36992
+282	1849417 52 32584 32637 3.0382 3.042706666667 2 128 128 256 32768
+283	1849469 66 32584 32637 3.0382 3.042706666667 2 0.0482 0.062706666667 0.110906666667 0.0062553660444862
+284	1849535 52 32584 32637 3.0382 3.042706666667 2 297 298 595 177013
+0	1849587 26 32712 32712 3.052173333333 3.052173333333 1 0 0 0 0
+1	1849613 26 32712 32712 3.052173333333 3.052173333333 1 0 0 0 0
+2	1849639 45 32693 32712 3.05108 3.052173333333 2 0 1 1 1
+3	1849684 70 32714 32730 3.052173333333 3.0544 3 0 1 1 1
+4	1849754 73 32714 32730 3.052173333333 3.0544 3 0 1248 1248 1557504
+5	1849827 88 32662 32730 3.046573333333 3.0544 4 0 1 2 2
+18	1849915 40 32661 32744 3.04608 3.05608 2 0 0 0 0
+19	1849955 40 32661 32744 3.04608 3.05608 2 0 0 0 0
+20	1849995 67 32661 32744 3.04608 3.05608 3 0 1 2 2
+27	1850062 27 32698 32698 3.051573333333 3.051573333333 1 0 0 0 0
+28	1850089 27 32698 32698 3.051573333333 3.051573333333 1 0 0 0 0
+29	1850116 54 32698 32725 3.051573333333 3.053746666666 2 0 1 1 1
+30	1850170 19 32676 32676 3.0494 3.0494 1 0 0 0 0
+31	1850189 19 32676 32676 3.0494 3.0494 1 0 0 0 0
+32	1850208 46 32676 32700 3.0494 3.051626666667 2 0 1 1 1
+36	1850254 54 32673 32724 3.048746666666 3.053306666667 2 0 0 0 0
+37	1850308 54 32673 32724 3.048746666666 3.053306666667 2 0 0 0 0
+38	1850362 108 32673 32731 3.048746666666 3.055533333334 4 0 1 2 2
+45	1850470 162 32653 32738 3.045919999999 3.056026666667 6 0 1 2 2
+46	1850632 168 32653 32738 3.045919999999 3.056026666667 6 0 1248 2496 3115008
+47	1850800 208 32655 32738 3.046026666667 3.056026666667 8 0 1 4 4
+66	1851008 27 32702 32702 3.051626666667 3.051626666667 1 0 0 0 0
+67	1851035 27 32702 32702 3.051626666667 3.051626666667 1 0 0 0 0
+68	1851062 54 32702 32727 3.051626666667 3.053853333334 2 0 1 1 1
+69	1851116 17 32686 32686 3.05 3.05 1 0 0 0 0
+70	1851133 17 32686 32686 3.05 3.05 1 0 0 0 0
+71	1851150 44 32686 32706 3.05 3.052173333333 2 0 1 1 1
+75	1851194 17 32687 32687 3.05 3.05 1 0 0 0 0
+76	1851211 17 32687 32687 3.05 3.05 1 0 0 0 0
+77	1851228 44 32687 32707 3.05 3.052173333333 2 0 1 1 1
+84	1851272 108 32657 32740 3.046026666667 3.056026666667 4 884 887 3542 3136446
+93	1851380 17 32688 32688 3.05 3.05 1 0 0 0 0
+94	1851397 17 32688 32688 3.05 3.05 1 0 0 0 0
+95	1851414 44 32688 32708 3.05 3.052173333333 2 0 1 1 1
+119	1851458 62 32673 32724 3.048746666666 3.053306666667 2 1248 1280 2528 3195904
+120	1851520 56 32673 32724 3.048746666666 3.053306666667 2 0 0 0 0
+121	1851576 62 32673 32724 3.048746666666 3.053306666667 2 1248 1280 2528 3195904
+122	1851638 60 32673 32724 3.048746666666 3.053306666667 2 156 160 316 49936
+123	1851698 60 32673 32724 3.048746666666 3.053306666667 2 163 167 330 54458
+144	1851758 31 32702 32702 3.051626666667 3.051626666667 1 1280 1280 1280 1638400
+145	1851789 28 32702 32702 3.051626666667 3.051626666667 1 0 0 0 0
+146	1851817 31 32702 32702 3.051626666667 3.051626666667 1 1280 1280 1280 1638400
+147	1851848 30 32702 32702 3.051626666667 3.051626666667 1 160 160 160 25600
+148	1851878 30 32702 32702 3.051626666667 3.051626666667 1 167 167 167 27889
+149	1851908 31 32712 32712 3.052173333333 3.052173333333 1 1280 1280 1280 1638400
+150	1851939 28 32712 32712 3.052173333333 3.052173333333 1 0 0 0 0
+151	1851967 31 32712 32712 3.052173333333 3.052173333333 1 1280 1280 1280 1638400
+152	1851998 30 32712 32712 3.052173333333 3.052173333333 1 160 160 160 25600
+153	1852028 30 32712 32712 3.052173333333 3.052173333333 1 167 167 167 27889
+154	1852058 62 32714 32716 3.052173333333 3.052173333333 2 1248 1280 2528 3195904
+155	1852120 61 32714 32730 3.052173333333 3.0544 2 0 0.002226666667 0.002226666667 4.9580444459289e-06
+156	1852181 54 32714 32730 3.052173333333 3.0544 2 1248 1280 2528 3195904
+157	1852235 52 32714 32730 3.052173333333 3.0544 2 156 160 316 49936
+158	1852287 52 32714 32730 3.052173333333 3.0544 2 163 167 330 54458
+159	1852339 20 32677 32677 3.05 3.05 1 128 128 128 16384
+160	1852359 20 32678 32678 3.05 3.05 1 128 128 128 16384
+161	1852379 20 32679 32679 3.05 3.05 1 128 128 128 16384
+162	1852399 20 32680 32680 3.05 3.05 1 136 136 136 18496
+163	1852419 20 32681 32681 3.05 3.05 1 136 136 136 18496
+164	1852439 20 32682 32682 3.05 3.05 1 136 136 136 18496
+165	1852459 21 32686 32686 3.05 3.05 1 1248 1248 1248 1557504
+166	1852480 18 32686 32686 3.05 3.05 1 0 0 0 0
+167	1852498 21 32686 32686 3.05 3.05 1 1248 1248 1248 1557504
+168	1852519 20 32686 32686 3.05 3.05 1 156 156 156 24336
+169	1852539 20 32686 32686 3.05 3.05 1 163 163 163 26569
+170	1852559 21 32687 32687 3.05 3.05 1 1248 1248 1248 1557504
+171	1852580 18 32687 32687 3.05 3.05 1 0 0 0 0
+172	1852598 21 32687 32687 3.05 3.05 1 1248 1248 1248 1557504
+173	1852619 20 32687 32687 3.05 3.05 1 156 156 156 24336
+174	1852639 20 32687 32687 3.05 3.05 1 163 163 163 26569
+175	1852659 21 32688 32688 3.05 3.05 1 1248 1248 1248 1557504
+176	1852680 18 32688 32688 3.05 3.05 1 0 0 0 0
+177	1852698 21 32688 32688 3.05 3.05 1 1248 1248 1248 1557504
+178	1852719 20 32688 32688 3.05 3.05 1 156 156 156 24336
+179	1852739 20 32688 32688 3.05 3.05 1 163 163 163 26569
+184	1852759 90 32649 32732 3.045919999999 3.055919999999 3 163 167 493 81027
+185	1852849 90 32649 32732 3.045919999999 3.055919999999 3 156 160 472 74272
+188	1852939 48 32661 32744 3.04608 3.05608 2 1280 1280 2560 3276800
+189	1852987 42 32661 32744 3.04608 3.05608 2 0 0 0 0
+190	1853029 48 32661 32744 3.04608 3.05608 2 1280 1280 2560 3276800
+191	1853077 46 32661 32744 3.04608 3.05608 2 160 160 320 51200
+192	1853123 46 32661 32744 3.04608 3.05608 2 167 167 334 55778
+203	1853169 31 32698 32698 3.051573333333 3.051573333333 1 1248 1248 1248 1557504
+204	1853200 28 32698 32698 3.051573333333 3.051573333333 1 0 0 0 0
+205	1853228 31 32698 32698 3.051573333333 3.051573333333 1 1248 1248 1248 1557504
+206	1853259 30 32698 32698 3.051573333333 3.051573333333 1 156 156 156 24336
+207	1853289 30 32698 32698 3.051573333333 3.051573333333 1 163 163 163 26569
+213	1853319 23 32676 32676 3.0494 3.0494 1 1280 1280 1280 1638400
+214	1853342 20 32676 32676 3.0494 3.0494 1 0 0 0 0
+215	1853362 23 32676 32676 3.0494 3.0494 1 1280 1280 1280 1638400
+216	1853385 22 32676 32676 3.0494 3.0494 1 160 160 160 25600
+217	1853407 22 32676 32676 3.0494 3.0494 1 167 167 167 27889
+222	1853429 52 32674 32694 3.0494 3.051573333333 2 163 167 330 54458
+223	1853481 52 32674 32694 3.0494 3.051573333333 2 156 160 316 49936
+230	1853533 30 32726 32726 3.053853333334 3.053853333334 1 167 167 167 27889
+231	1853563 30 32726 32726 3.053853333334 3.053853333334 1 160 160 160 25600
+234	1853593 30 32703 32703 3.052173333333 3.052173333333 1 163 163 163 26569
+235	1853623 30 32703 32703 3.052173333333 3.052173333333 1 156 156 156 24336
+236	1853653 30 32704 32704 3.052173333333 3.052173333333 1 163 163 163 26569
+237	1853683 30 32704 32704 3.052173333333 3.052173333333 1 156 156 156 24336
+238	1853713 30 32705 32705 3.052173333333 3.052173333333 1 163 163 163 26569
+239	1853743 30 32705 32705 3.052173333333 3.052173333333 1 156 156 156 24336
+256	1853773 30 32722 32722 3.053306666667 3.053306666667 1 167 167 167 27889
+257	1853803 30 32722 32722 3.053306666667 3.053306666667 1 160 160 160 25600
+258	1853833 30 32669 32669 3.048746666666 3.048746666666 1 163 163 163 26569
+259	1853863 30 32669 32669 3.048746666666 3.048746666666 1 156 156 156 24336
+262	1853893 30 32699 32699 3.051626666667 3.051626666667 1 167 167 167 27889
+263	1853923 30 32699 32699 3.051626666667 3.051626666667 1 160 160 160 25600
+272	1853953 46 32659 32742 3.04608 3.05608 2 167 167 334 55778
+273	1853999 46 32659 32742 3.04608 3.05608 2 160 160 320 51200
+274	1854045 124 32653 32736 3.045919999999 3.055919999999 4 1248 1248 4992 6230016
+275	1854169 138 32655 32738 3.046026666667 3.056026666667 4 0 0.000106666668 0.000213333336 2.2755556124444e-08
+276	1854307 124 32655 32738 3.046026666667 3.056026666667 4 1248 1248 4992 6230016
+277	1854431 120 32655 32738 3.046026666667 3.056026666667 4 156 156 624 97344
+278	1854551 120 32655 32738 3.046026666667 3.056026666667 4 163 163 652 106276
+279	1854671 112 32654 32737 3.046026666667 3.056026666667 4 163 163 652 106276
+280	1854783 112 32654 32737 3.046026666667 3.056026666667 4 156 156 624 97344
+281	1854895 112 32657 32740 3.046026666667 3.056026666667 4 136 136 544 73984
+282	1855007 112 32658 32741 3.046026666667 3.056026666667 4 128 128 512 65536
+283	1855119 148 32658 32741 3.046026666667 3.056026666667 4 0.0482 0.063164626294 0.223417959628 0.012590984770491
+284	1855267 112 32658 32741 3.046026666667 3.056026666667 4 298 299 1194 356410
+5	1855379 26 32745 32745 3.056573333333 3.056573333333 1 0 0 0 0
+20	1855405 27 32751 32751 3.058306666667 3.058306666667 1 0 0 0 0
+30	1855432 19 32759 32759 3.0594 3.0594 1 0 0 0 0
+31	1855451 19 32759 32759 3.0594 3.0594 1 0 0 0 0
+32	1855470 19 32759 32759 3.0594 3.0594 1 1 1 1 1
+36	1855489 27 32756 32756 3.058746666666 3.058746666666 1 0 0 0 0
+37	1855516 27 32756 32756 3.058746666666 3.058746666666 1 0 0 0 0
+38	1855543 27 32756 32756 3.058746666666 3.058746666666 1 1 1 1 1
+47	1855570 19 32747 32747 3.0582 3.0582 1 0 0 0 0
+69	1855589 17 32769 32769 3.06 3.06 1 0 0 0 0
+70	1855606 17 32769 32769 3.06 3.06 1 0 0 0 0
+71	1855623 17 32769 32769 3.06 3.06 1 1 1 1 1
+75	1855640 17 32770 32770 3.06 3.06 1 0 0 0 0
+76	1855657 17 32770 32770 3.06 3.06 1 0 0 0 0
+77	1855674 17 32770 32770 3.06 3.06 1 1 1 1 1
+84	1855691 21 32749 32749 3.0582 3.0582 1 888 888 888 788544
+93	1855712 17 32771 32771 3.06 3.06 1 0 0 0 0
+94	1855729 17 32771 32771 3.06 3.06 1 0 0 0 0
+95	1855746 17 32771 32771 3.06 3.06 1 1 1 1 1
+119	1855763 31 32756 32756 3.058746666666 3.058746666666 1 1248 1248 1248 1557504
+120	1855794 28 32756 32756 3.058746666666 3.058746666666 1 0 0 0 0
+121	1855822 31 32756 32756 3.058746666666 3.058746666666 1 1248 1248 1248 1557504
+122	1855853 30 32756 32756 3.058746666666 3.058746666666 1 156 156 156 24336
+123	1855883 30 32756 32756 3.058746666666 3.058746666666 1 163 163 163 26569
+159	1855913 20 32760 32760 3.06 3.06 1 128 128 128 16384
+160	1855933 20 32761 32761 3.06 3.06 1 128 128 128 16384
+161	1855953 20 32762 32762 3.06 3.06 1 128 128 128 16384
+162	1855973 20 32763 32763 3.06 3.06 1 136 136 136 18496
+163	1855993 20 32764 32764 3.06 3.06 1 136 136 136 18496
+164	1856013 20 32765 32765 3.06 3.06 1 136 136 136 18496
+165	1856033 21 32769 32769 3.06 3.06 1 1248 1248 1248 1557504
+166	1856054 18 32769 32769 3.06 3.06 1 0 0 0 0
+167	1856072 21 32769 32769 3.06 3.06 1 1248 1248 1248 1557504
+168	1856093 20 32769 32769 3.06 3.06 1 156 156 156 24336
+169	1856113 20 32769 32769 3.06 3.06 1 163 163 163 26569
+170	1856133 21 32770 32770 3.06 3.06 1 1248 1248 1248 1557504
+171	1856154 18 32770 32770 3.06 3.06 1 0 0 0 0
+172	1856172 21 32770 32770 3.06 3.06 1 1248 1248 1248 1557504
+173	1856193 20 32770 32770 3.06 3.06 1 156 156 156 24336
+174	1856213 20 32770 32770 3.06 3.06 1 163 163 163 26569
+175	1856233 21 32771 32771 3.06 3.06 1 1248 1248 1248 1557504
+176	1856254 18 32771 32771 3.06 3.06 1 0 0 0 0
+177	1856272 21 32771 32771 3.06 3.06 1 1248 1248 1248 1557504
+178	1856293 20 32771 32771 3.06 3.06 1 156 156 156 24336
+179	1856313 20 32771 32771 3.06 3.06 1 163 163 163 26569
+184	1856333 30 32772 32772 3.060533333334 3.060533333334 1 167 167 167 27889
+185	1856363 30 32772 32772 3.060533333334 3.060533333334 1 160 160 160 25600
+213	1856393 23 32759 32759 3.0594 3.0594 1 1280 1280 1280 1638400
+214	1856416 20 32759 32759 3.0594 3.0594 1 0 0 0 0
+215	1856436 23 32759 32759 3.0594 3.0594 1 1280 1280 1280 1638400
+216	1856459 22 32759 32759 3.0594 3.0594 1 160 160 160 25600
+217	1856481 22 32759 32759 3.0594 3.0594 1 167 167 167 27889
+222	1856503 22 32757 32757 3.0594 3.0594 1 167 167 167 27889
+223	1856525 22 32757 32757 3.0594 3.0594 1 160 160 160 25600
+258	1856547 30 32752 32752 3.058746666666 3.058746666666 1 163 163 163 26569
+259	1856577 30 32752 32752 3.058746666666 3.058746666666 1 156 156 156 24336
+279	1856607 22 32746 32746 3.0582 3.0582 1 163 163 163 26569
+280	1856629 22 32746 32746 3.0582 3.0582 1 156 156 156 24336
+281	1856651 22 32749 32749 3.0582 3.0582 1 136 136 136 18496
+282	1856673 22 32750 32750 3.0582 3.0582 1 128 128 128 16384
+283	1856695 25 32750 32750 3.0582 3.0582 1 0.0482 0.0482 0.0482 0.00232324
+284	1856720 22 32750 32750 3.0582 3.0582 1 300 300 300 90000
+0	1856742 66769 32795 233194 3.062173333333 25.001137959627 2449 0 2 149 157
+1	1923511 67196 32795 233194 3.062173333333 25.001137959627 2449 0 1448 180544 230093312
+2	1990707 111513 32776 233194 3.06108 25.001137959627 4616 0 1 2308 2308
+3	2102220 168528 32797 233130 3.062173333333 24.9944 6806 0 1 2304 2304
+4	2270748 175330 32797 233130 3.062173333333 24.9944 6806 0 1248 2756592 3420268416
+5	2446078 211088 32797 233154 3.062173333333 24.996573333333 9004 0 1 4502 4502
+15	2657166 3122 34043 233153 3.19620541103 24.99620541103 114 0 0 0 0
+16	2660288 3122 34043 233153 3.19620541103 24.99620541103 114 0 0 0 0
+17	2663410 6354 34043 233155 3.19620541103 24.997698744363 228 0 1 114 114
+18	2669764 50863 32832 233149 3.06608 24.99608 2308 0 0 0 0
+19	2720627 50863 32832 233149 3.06608 24.99608 2308 0 0 0 0
+20	2771490 116231 32832 233161 3.06608 24.998306666667 4616 0 1 2308 2308
+21	2887721 3118 33689 232799 3.157440227996 24.957440227996 110 0 0 0 0
+22	2890839 3118 33689 232799 3.157440227996 24.957440227996 110 0 0 0 0
+23	2893957 6236 33689 232800 3.157440227996 24.957813561329 220 0 1 110 110
+24	2900193 3232 33242 232352 3.110209697334 24.910209697334 114 0 0 0 0
+25	2903425 3232 33242 232352 3.110209697334 24.910209697334 114 0 0 0 0
+26	2906657 6464 33242 232356 3.110209697334 24.910583030667 228 0 1 114 114
+27	2913121 65342 32781 233203 3.061573333333 25.001573333333 2305 0 0 0 0
+28	2978463 65342 32781 233203 3.061573333333 25.001573333333 2305 0 0 0 0
+29	3043805 130656 32781 233203 3.061573333333 25.001573333333 4609 0 1 2305 2305
+30	3174461 47876 32847 233169 3.0694 24.9994 2308 0 0 0 0
+31	3222337 47876 32847 233169 3.0694 24.9994 2308 0 0 0 0
+32	3270213 113304 32783 233206 3.061626666667 25.001626666667 4617 0 1 2308 2308
+33	3383517 3200 33289 232399 3.115103839377 24.915103839377 114 0 0 0 0
+34	3386717 3200 33289 232399 3.115103839377 24.915103839377 114 0 0 0 0
+35	3389917 6322 33289 232400 3.115103839377 24.91547717271 228 0 1 114 114
+36	3396239 131224 32807 233166 3.063306666667 24.998746666666 4632 0 1 130 130
+37	3527463 131504 32807 233166 3.063306666667 24.998746666666 4632 0 1280 43696 34901888
+38	3658967 255188 32775 233189 3.060919999999 25.000919999999 9005 0 1 4502 4502
+39	3914155 3119 34088 233198 3.201239999998 25.001239999998 110 0 0 0 0
+40	3917274 3119 34088 233198 3.201239999998 25.001239999998 110 0 0 0 0
+41	3920393 6238 34088 233204 3.201239999998 25.001613333331 220 0 1 110 110
+42	3926631 3204 32925 232037 3.076005161161 24.876005161161 114 0 0 0 0
+43	3929835 3204 32925 232037 3.076005161161 24.876005161161 114 0 0 0 0
+44	3933039 6404 32925 232050 3.076005161161 24.876378494494 228 0 1 114 114
+45	3939443 249254 32774 233184 3.060533333334 25.000533333334 8797 0 1 2214 2214
+46	4188697 255896 32774 233184 3.060533333334 25.000533333334 8797 0 1248 2763072 3448313856
+47	4444593 355620 32774 233184 3.060533333334 25.000533333334 13165 0 1 6583 6583
+51	4800213 3118 32811 231923 3.063671228168 24.863671228168 110 0 0 0 0
+52	4803331 3118 32811 231923 3.063671228168 24.863671228168 110 0 0 0 0
+53	4806449 6236 32811 231929 3.063671228168 24.864044561501 220 0 1 110 110
+54	4812685 3266 33117 232229 3.09672042099 24.89672042099 122 0 1 4 4
+55	4815951 3274 33117 232229 3.09672042099 24.89672042099 122 0 208 832 173056
+56	4819225 6470 33117 232230 3.09672042099 24.897093754323 236 0 1 118 118
+57	4825695 3118 33781 232891 3.168026666665 24.968026666665 110 0 0 0 0
+58	4828813 3118 33781 232891 3.168026666665 24.968026666665 110 0 0 0 0
+59	4831931 6236 33781 232898 3.168026666665 24.968399999998 220 0 1 110 110
+60	4838167 3118 32912 232024 3.074044561501 24.874044561501 110 0 0 0 0
+61	4841285 3118 32912 232024 3.074044561501 24.874044561501 110 0 0 0 0
+62	4844403 6236 32912 232027 3.074044561501 24.874417894834 220 0 1 110 110
+63	4850639 3204 33451 232561 3.130776513444 24.930776513444 114 0 0 0 0
+64	4853843 3204 33451 232561 3.130776513444 24.930776513444 114 0 0 0 0
+65	4857047 6436 33451 232564 3.130776513444 24.931149846777 228 0 1 114 114
+66	4863483 65429 32785 233208 3.061626666667 25.001626666667 2309 0 0 0 0
+67	4928912 65429 32785 233208 3.061626666667 25.001626666667 2309 0 0 0 0
+68	4994341 130829 32785 233208 3.061626666667 25.001626666667 4617 0 1 2309 2309
+69	5125170 39993 32857 233179 3.07 25 2194 0 0 0 0
+70	5165163 39993 32857 233179 3.07 25 2194 0 0 0 0
+71	5205156 102218 32789 233212 3.062173333333 25.002173333333 4389 0 1 2194 2194
+75	5307374 39993 32858 233180 3.07 25 2194 0 0 0 0
+76	5347367 39993 32858 233180 3.07 25 2194 0 0 0 0
+77	5387360 102218 32790 233213 3.062173333333 25.002173333333 4389 0 1 2194 2194
+84	5489578 188767 32803 233159 3.062706666667 24.9982 6582 889 7470 27509469 138738339251
+93	5678345 39993 32859 233181 3.07 25 2194 0 0 0 0
+94	5718338 39993 32859 233181 3.07 25 2194 0 0 0 0
+95	5758331 102218 32791 233214 3.062173333333 25.002173333333 4389 0 1 2194 2194
+99	5860549 3432 32925 232037 3.076005161161 24.876005161161 114 168 208 19312 3277696
+100	5863981 3318 32925 232037 3.076005161161 24.876005161161 114 0 0 0 0
+101	5867299 3546 32925 232037 3.076005161161 24.876005161161 114 168 208 19312 3277696
+102	5870845 3432 32925 232037 3.076005161161 24.876005161161 114 21 26 2414 51214
+103	5874277 3432 32925 232037 3.076005161161 24.876005161161 114 28 33 3212 90596
+104	5877709 3448 32811 231923 3.063671228168 24.863671228168 110 168 168 18480 3104640
+105	5881157 3228 32811 231923 3.063671228168 24.863671228168 110 0 0 0 0
+106	5884385 3448 32811 231923 3.063671228168 24.863671228168 110 168 168 18480 3104640
+107	5887833 3338 32811 231923 3.063671228168 24.863671228168 110 21 21 2310 48510
+108	5891171 3338 32811 231923 3.063671228168 24.863671228168 110 28 28 3080 86240
+109	5894509 3534 33117 232229 3.09672042099 24.89672042099 118 168 208 20144 3450752
+110	5898043 3322 33117 232229 3.09672042099 24.89672042099 118 0 0.00044 0.00176 7.744e-07
+111	5901365 3534 33117 232229 3.09672042099 24.89672042099 118 168 208 20144 3450752
+112	5904899 3416 33117 232229 3.09672042099 24.89672042099 118 21 26 2518 53918
+113	5908315 3416 33117 232229 3.09672042099 24.89672042099 118 28 33 3344 94952
+114	5911731 3542 33289 232399 3.115103839377 24.915103839377 114 168 216 19344 3291264
+115	5915273 3314 33289 232399 3.115103839377 24.915103839377 114 0 0 0 0
+116	5918587 3542 33289 232399 3.115103839377 24.915103839377 114 168 216 19344 3291264
+117	5922129 3428 33289 232399 3.115103839377 24.915103839377 114 21 27 2418 51426
+118	5925557 3428 33289 232399 3.115103839377 24.915103839377 114 28 34 3216 90864
+119	5928985 145458 32807 233166 3.063306666667 24.998746666666 4502 168 1280 5568432 7018015616
+120	6074443 133756 32807 233166 3.063306666667 24.998746666666 4502 0 0.001773333335 0.056978938826 4.3048008662125e-05
+121	6208199 145458 32807 233166 3.063306666667 24.998746666666 4502 168 1280 5568432 7018015616
+122	6353657 140960 32807 233166 3.063306666667 24.998746666666 4502 21 160 696054 109656494
+123	6494617 140960 32807 233166 3.063306666667 24.998746666666 4502 28 167 727568 119621848
+124	6635577 3449 34088 233198 3.201239999998 25.001239999998 110 168 168 18480 3104640
+125	6639026 3229 34088 233198 3.201239999998 25.001239999998 110 0 0 0 0
+126	6642255 3449 34088 233198 3.201239999998 25.001239999998 110 168 168 18480 3104640
+127	6645704 3339 34088 233198 3.201239999998 25.001239999998 110 21 21 2310 48510
+128	6649043 3339 34088 233198 3.201239999998 25.001239999998 110 28 28 3080 86240
+129	6652382 3448 33781 232891 3.168026666665 24.968026666665 110 168 168 18480 3104640
+130	6655830 3228 33781 232891 3.168026666665 24.968026666665 110 0 0 0 0
+131	6659058 3448 33781 232891 3.168026666665 24.968026666665 110 168 168 18480 3104640
+132	6662506 3338 33781 232891 3.168026666665 24.968026666665 110 21 21 2310 48510
+133	6665844 3338 33781 232891 3.168026666665 24.968026666665 110 28 28 3080 86240
+134	6669182 3448 32912 232024 3.074044561501 24.874044561501 110 168 168 18480 3104640
+135	6672630 3228 32912 232024 3.074044561501 24.874044561501 110 0 0 0 0
+136	6675858 3448 32912 232024 3.074044561501 24.874044561501 110 168 168 18480 3104640
+137	6679306 3338 32912 232024 3.074044561501 24.874044561501 110 21 21 2310 48510
+138	6682644 3338 32912 232024 3.074044561501 24.874044561501 110 28 28 3080 86240
+139	6685982 3546 33451 232561 3.130776513444 24.930776513444 114 168 216 19344 3291264
+140	6689528 3318 33451 232561 3.130776513444 24.930776513444 114 0 0 0 0
+141	6692846 3546 33451 232561 3.130776513444 24.930776513444 114 168 216 19344 3291264
+142	6696392 3432 33451 232561 3.130776513444 24.930776513444 114 21 27 2418 51426
+143	6699824 3432 33451 232561 3.130776513444 24.930776513444 114 28 34 3216 90864
+144	6703256 74551 32785 233208 3.061626666667 25.001626666667 2309 168 1280 2831600 3602490240
+145	6777807 67738 32785 233208 3.061626666667 25.001626666667 2309 0 0 0 0
+146	6845545 74551 32785 233208 3.061626666667 25.001626666667 2309 168 1280 2831600 3602490240
+147	6920096 72246 32785 233208 3.061626666667 25.001626666667 2309 21 160 353950 56288910
+148	6992342 72246 32785 233208 3.061626666667 25.001626666667 2309 28 167 370113 61357351
+149	7064588 74495 32795 233194 3.062173333333 25.001137959627 2308 168 1280 2830640 3601440640
+150	7139083 69353 32795 233194 3.062173333333 25.001137959627 2308 0 0.007173333333 0.188280589011 0.00076537946876022
+151	7208436 74386 32795 233194 3.062173333333 25.001137959627 2308 168 1280 2830640 3601440640
+152	7282822 72082 32795 233194 3.062173333333 25.001137959627 2308 21 160 353830 56272510
+153	7354904 72082 32795 233194 3.062173333333 25.001137959627 2308 28 167 369986 61339222
+154	7426986 145466 32797 233116 3.062173333333 24.992173333333 4502 168 1280 5568752 7018604416
+155	7572452 144474 32797 233130 3.062173333333 24.9944 4502 0 0.002226666667 4.9942399606582 0.0109858264451
+156	7716926 127914 32797 233130 3.062173333333 24.9944 4502 168 1280 5568752 7018604416
+157	7844840 123416 32797 233130 3.062173333333 24.9944 4502 21 160 696094 109665694
+158	7968256 123416 32797 233130 3.062173333333 24.9944 4502 28 167 727608 119631608
+159	8091672 46575 32848 233170 3.07 25 2194 128 128 280832 35946496
+160	8138247 46575 32849 233171 3.07 25 2194 128 128 280832 35946496
+161	8184822 46575 32850 233172 3.07 25 2194 128 128 280832 35946496
+162	8231397 46575 32851 233173 3.07 25 2194 136 136 298384 40580224
+163	8277972 46575 32852 233174 3.07 25 2194 136 136 298384 40580224
+164	8324547 46575 32853 233175 3.07 25 2194 136 136 298384 40580224
+165	8371122 48769 32857 233179 3.07 25 2194 1248 1248 2738112 3417163776
+166	8419891 42187 32857 233179 3.07 25 2194 0 0 0 0
+167	8462078 48769 32857 233179 3.07 25 2194 1248 1248 2738112 3417163776
+168	8510847 46575 32857 233179 3.07 25 2194 156 156 342264 53393184
+169	8557422 46575 32857 233179 3.07 25 2194 163 163 357622 58292386
+170	8603997 48769 32858 233180 3.07 25 2194 1248 1248 2738112 3417163776
+171	8652766 42187 32858 233180 3.07 25 2194 0 0 0 0
+172	8694953 48769 32858 233180 3.07 25 2194 1248 1248 2738112 3417163776
+173	8743722 46575 32858 233180 3.07 25 2194 156 156 342264 53393184
+174	8790297 46575 32858 233180 3.07 25 2194 163 163 357622 58292386
+175	8836872 48769 32859 233181 3.07 25 2194 1248 1248 2738112 3417163776
+176	8885641 42187 32859 233181 3.07 25 2194 0 0 0 0
+177	8927828 48769 32859 233181 3.07 25 2194 1248 1248 2738112 3417163776
+178	8976597 46575 32859 233181 3.07 25 2194 156 156 342264 53393184
+179	9023172 46575 32859 233181 3.07 25 2194 163 163 357622 58292386
+180	9069747 3428 32971 232083 3.081378494494 24.881378494494 114 28 33 3212 90596
+181	9073175 3428 32971 232083 3.081378494494 24.881378494494 114 21 26 2414 51214
+182	9076603 3350 33346 232456 3.12047717271 24.92047717271 114 28 34 3216 90864
+183	9079953 3350 33346 232456 3.12047717271 24.92047717271 114 21 27 2418 51426
+184	9083303 140993 32820 233182 3.065919999999 25.000533333334 4502 28 167 727568 119621848
+185	9224296 140993 32820 233182 3.065919999999 25.000533333334 4502 21 160 696054 109656494
+186	9365289 3308 34143 231431 3.206613333331 24.806613333331 109 28 28 3052 85456
+187	9368597 3308 34143 231431 3.206613333331 24.806613333331 109 21 21 2289 48069
+188	9371905 59981 32832 233149 3.06608 24.99608 2308 168 1280 2830480 3601139840
+189	9431886 53171 32832 233149 3.06608 24.99608 2308 0 0 0 0
+190	9485057 59981 32832 233149 3.06608 24.99608 2308 168 1280 2830480 3601139840
+191	9545038 57677 32832 233149 3.06608 24.99608 2308 21 160 353810 56267810
+192	9602715 57677 32832 233149 3.06608 24.99608 2308 28 167 369966 61334242
+193	9660392 3464 34043 233153 3.19620541103 24.99620541103 114 168 216 19344 3291264
+194	9663856 3236 34043 233153 3.19620541103 24.99620541103 114 0 0 0 0
+195	9667092 3464 34043 233153 3.19620541103 24.99620541103 114 168 216 19344 3291264
+196	9670556 3350 34043 233153 3.19620541103 24.99620541103 114 21 27 2418 51426
+197	9673906 3350 34043 233153 3.19620541103 24.99620541103 114 28 34 3216 90864
+198	9677256 3448 33689 232799 3.157440227996 24.957440227996 110 168 168 18480 3104640
+199	9680704 3228 33689 232799 3.157440227996 24.957440227996 110 0 0 0 0
+200	9683932 3448 33689 232799 3.157440227996 24.957440227996 110 168 168 18480 3104640
+201	9687380 3338 33689 232799 3.157440227996 24.957440227996 110 21 21 2310 48510
+202	9690718 3338 33689 232799 3.157440227996 24.957440227996 110 28 28 3080 86240
+203	9694056 74452 32781 233203 3.061573333333 25.001573333333 2305 168 1248 2757840 3421825920
+204	9768508 67647 32781 233203 3.061573333333 25.001573333333 2305 0 0 0 0
+205	9836155 74452 32781 233203 3.061573333333 25.001573333333 2305 168 1248 2757840 3421825920
+206	9910607 72147 32781 233203 3.061573333333 25.001573333333 2305 21 156 344730 53466030
+207	9982754 72147 32781 233203 3.061573333333 25.001573333333 2305 28 163 360865 58405195
+208	10054901 3574 33242 232352 3.110209697334 24.910209697334 114 168 216 19344 3291264
+209	10058475 3346 33242 232352 3.110209697334 24.910209697334 114 0 0 0 0
+210	10061821 3574 33242 232352 3.110209697334 24.910209697334 114 168 216 19344 3291264
+211	10065395 3460 33242 232352 3.110209697334 24.910209697334 114 21 27 2418 51426
+212	10068855 3460 33242 232352 3.110209697334 24.910209697334 114 28 34 3216 90864
+213	10072315 56994 32847 233169 3.0694 24.9994 2308 168 1280 2830480 3601139840
+214	10129309 50184 32847 233169 3.0694 24.9994 2308 0 0 0 0
+215	10179493 56994 32847 233169 3.0694 24.9994 2308 168 1280 2830480 3601139840
+216	10236487 54690 32847 233169 3.0694 24.9994 2308 21 160 353810 56267810
+217	10291177 54690 32847 233169 3.0694 24.9994 2308 28 167 369966 61334242
+218	10345867 3338 32907 232019 3.074044561501 24.874044561501 110 28 28 3080 86240
+219	10349205 3338 32907 232019 3.074044561501 24.874044561501 110 21 21 2310 48510
+220	10352543 3526 33205 232315 3.107093754323 24.907093754323 118 28 33 3344 94952
+221	10356069 3526 33205 232315 3.107093754323 24.907093754323 118 21 26 2518 53918
+222	10359595 123499 32777 233199 3.061573333333 25.001573333333 4503 28 167 727771 119658177
+223	10483094 123499 32777 233199 3.061573333333 25.001573333333 4503 21 160 696250 109690030
+224	10606593 3338 33872 232982 3.178399999998 24.978399999998 110 28 28 3080 86240
+225	10609931 3338 33872 232982 3.178399999998 24.978399999998 110 21 21 2310 48510
+226	10613269 3338 33012 232124 3.084417894834 24.884417894834 110 28 28 3080 86240
+227	10616607 3338 33012 232124 3.084417894834 24.884417894834 110 21 21 2310 48510
+228	10619945 3460 33538 232648 3.141149846777 24.941149846777 114 28 34 3216 90864
+229	10623405 3460 33538 232648 3.141149846777 24.941149846777 114 21 27 2418 51426
+230	10626865 72214 32813 233126 3.063853333334 24.993853333334 2308 28 167 369946 61329462
+231	10699079 72214 32813 233126 3.063853333334 24.993853333334 2308 21 160 353790 56263310
+232	10771293 3460 33293 232403 3.115583030667 24.915583030667 114 28 34 3216 90864
+233	10774753 3460 33293 232403 3.115583030667 24.915583030667 114 21 27 2418 51426
+234	10778213 68810 32786 233209 3.062173333333 25.002173333333 2195 163 163 357785 58318955
+235	10847023 68810 32786 233209 3.062173333333 25.002173333333 2195 156 156 342420 53417520
+236	10915833 68810 32787 233210 3.062173333333 25.002173333333 2195 163 163 357785 58318955
+237	10984643 68810 32787 233210 3.062173333333 25.002173333333 2195 156 156 342420 53417520
+238	11053453 68810 32788 233211 3.062173333333 25.002173333333 2195 163 163 357785 58318955
+239	11122263 68810 32788 233211 3.062173333333 25.002173333333 2195 156 156 342420 53417520
+256	11191073 72182 32805 233122 3.063306666667 24.993306666667 2308 28 167 369966 61334242
+257	11263255 72182 32805 233122 3.063306666667 24.993306666667 2308 21 160 353810 56267810
+258	11335437 72117 32840 233185 3.068746666666 25.000774618612 2304 28 163 360702 58378626
+259	11407554 72117 32840 233185 3.068746666666 25.000774618612 2304 21 156 344574 53441694
+260	11479671 3338 33774 232884 3.167813561329 24.967813561329 110 28 28 3080 86240
+261	11483009 3338 33774 232884 3.167813561329 24.967813561329 110 21 21 2310 48510
+262	11486347 72245 32782 233205 3.061626666667 25.001626666667 2309 28 167 370133 61362131
+263	11558592 72245 32782 233205 3.061626666667 25.001626666667 2309 21 160 353970 56293410
+270	11630837 3430 34201 231489 3.212698744363 24.812698744363 113 28 34 3188 90080
+271	11634267 3430 34201 231489 3.212698744363 24.812698744363 113 21 27 2397 50985
+272	11637697 57652 32830 233147 3.06608 24.99608 2307 28 167 369958 61338438
+273	11695349 57652 32830 233147 3.06608 24.99608 2307 21 160 353809 56272069
+274	11753001 212948 32774 233184 3.060533333334 25.000533333334 6583 1248 1248 8215584 10253048832
+275	11965949 221845 32774 233184 3.060533333334 25.000533333334 6583 0 0.001760000002 0.26773333624799 7.3648356197401e-05
+276	12187794 212820 32774 233184 3.060533333334 25.000533333334 6583 1248 1248 8215584 10253048832
+277	12400614 206237 32774 233184 3.060533333334 25.000533333334 6583 156 156 1026948 160203888
+278	12606851 206237 32774 233184 3.060533333334 25.000533333334 6583 163 163 1073029 174903727
+279	12813088 188878 32800 233156 3.062706666667 24.9982 6582 163 163 1072866 174877158
+280	13001966 188878 32800 233156 3.062706666667 24.9982 6582 156 156 1026792 160179552
+281	13190844 188878 32803 233159 3.062706666667 24.9982 6582 136 136 895152 121740672
+282	13379722 188878 32804 233160 3.062706666667 24.9982 6582 128 128 842496 107839488
+283	13568600 243824 32804 233160 3.062706666667 24.9982 6582 0.0482 0.070373333333 366.46509909564 20.637807532621
+284	13812424 193360 32804 233160 3.062706666667 24.9982 6582 299 2494 9191763 15476580215
+285	14005784 5093 33142 233179 3.1 25 220 124800 124800 27456000 3426508800000
+286	14010877 5093 33142 233179 3.1 25 220 124800 124800 27456000 3426508800000
+287	14015970 5093 33143 233180 3.1 25 220 124800 124800 27456000 3426508800000
+288	14021063 5093 33143 233180 3.1 25 220 124800 124800 27456000 3426508800000
+289	14026156 5093 33144 233181 3.1 25 220 124800 124800 27456000 3426508800000
+290	14031249 5093 33144 233181 3.1 25 220 124800 124800 27456000 3426508800000
+291	14036342 5071 33179 232289 3.1 24.9 219 307200 307200 67276800 20667432960000
+292	14041413 4322 33781 232891 3 24.9 220 0 1680 184800 310464000
+293	14045735 4322 33781 232891 3 24.9 220 0 1680 184800 310464000
+294	14050057 4334 33451 232561 3 24.9 220 0 2160 193440 329126400
+295	14054391 4334 33451 232561 3 24.9 220 0 2160 193440 329126400
+296	14058725 5071 33182 232292 3.1 24.9 219 252800 263280 55583200 14107787456000
+297	14063796 5071 33182 232292 3.1 24.9 219 252800 263280 55583200 14107787456000
+298	14068867 5093 33154 233203 3.1 25 220 124800 126480 27640800 3472945344000
+299	14073960 5093 33154 233203 3.1 25 220 124800 126480 27640800 3472945344000
+300	14079053 5071 33170 232282 3.1 24.9 219 252800 262400 55584720 14108493753600
+301	14084124 5071 33170 232282 3.1 24.9 219 252800 262400 55584720 14108493753600
+302	14089195 5093 33147 233184 3.1 25 220 374400 374400 82368000 30838579200000
+303	14094288 5093 33147 233184 3.1 25 220 374400 374400 82368000 30838579200000
+304	14099381 5093 33168 233194 3.1 25 220 128000 139280 28383200 3662427328000
+305	14104474 5093 33168 233194 3.1 25 220 128000 139280 28383200 3662427328000
+306	14109567 5093 33158 233208 3.1 25 220 128000 136800 28380000 3661420224000
+307	14114660 5093 33158 233208 3.1 25 220 128000 136800 28380000 3661420224000
+308	14119753 4334 33242 232352 3 24.9 220 0 2160 193440 329126400
+309	14124087 4334 33242 232352 3 24.9 220 0 2160 193440 329126400
+310	14128421 4334 34043 233153 3 24.9 220 0 2160 193440 329126400
+311	14132755 4334 33289 232399 3 24.9 220 0 2160 193440 329126400
+312	14137089 4334 33289 232399 3 24.9 220 0 2160 193440 329126400
+313	14141423 4321 32925 232037 2.9 24.8 220 0 3760 193120 355724800
+314	14145744 4321 32925 232037 2.9 24.8 220 0 3760 193120 355724800
+315	14150065 4321 32811 231923 2.9 24.8 220 0 1680 184800 310464000
+316	14154386 4321 32811 231923 2.9 24.8 220 0 1680 184800 310464000
+317	14158707 4321 33117 232229 2.9 24.8 220 0 5840 201440 435596800
+318	14163028 4321 33117 232229 2.9 24.8 220 0 5840 201440 435596800
+319	14167349 4334 34043 233153 3 24.9 220 0 2160 193440 329126400
+320	14171683 5071 33202 232312 3.1 24.9 219 128000 137200 28251920 3645041721600
+321	14176754 5071 33202 232312 3.1 24.9 219 128000 137200 28251920 3645041721600
+322	14181825 4322 33689 232799 3 24.9 220 0 1680 184800 310464000
+323	14186147 4322 33689 232799 3 24.9 220 0 1680 184800 310464000
+324	14190469 5071 33226 232336 3.1 24.9 219 128000 137200 28251920 3645041721600
+325	14195540 5071 33226 232336 3.1 24.9 219 128000 137200 28251920 3645041721600
+326	14200611 4323 34088 233198 3.1 25 220 0 1680 184800 310464000
+327	14204934 4323 34088 233198 3.1 25 220 0 1680 184800 310464000
+328	14209257 4321 32912 232024 2.9 24.8 220 0 1680 184800 310464000
+329	14213578 4321 32912 232024 2.9 24.8 220 0 1680 184800 310464000
+vector 334 RSVPTE4.LSR1.ppp[2].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 335 RSVPTE4.LSR1.ppp[2].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 336 RSVPTE4.LSR1.ppp[3].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 337 RSVPTE4.LSR1.ppp[3].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 338 RSVPTE4.LSR1.ppp[4].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 339 RSVPTE4.LSR1.ppp[4].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 340 RSVPTE4.LSR5.ppp[2].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 341 RSVPTE4.LSR5.ppp[2].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 342 RSVPTE4.host1.app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+vector 343 RSVPTE4.host2.app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+vector 344 RSVPTE4.host3.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 345 RSVPTE4.host3.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 346 RSVPTE4.host4.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 347 RSVPTE4.host4.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 348 RSVPTE4.host5.app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+0	14220921 77977 233218 461502 25.002173333333 49.992173333333 2794 0 2 175 185
+1	14298898 78477 233218 461502 25.002173333333 49.992173333333 2794 0 1448 211280 269184640
+2	14377375 130471 233223 461502 25.00263129296 49.992173333333 5258 0 1 2629 2629
+3	14507846 197075 233220 461520 25.002173333333 49.9944 7755 0 1 2625 2625
+4	14704921 204825 233220 461520 25.002173333333 49.9944 7755 0 1248 3141000 3897288000
+5	14909746 247215 233220 461544 25.002173333333 49.996573333333 10260 0 1 5130 5130
+15	15156961 3645 234979 461543 25.19620541103 49.99620541103 130 0 0 0 0
+16	15160606 3645 234979 461543 25.19620541103 49.99620541103 130 0 0 0 0
+17	15164251 7415 234979 461545 25.19620541103 49.997698744363 260 0 1 130 130
+18	15171666 59695 233251 461539 25.00608 49.99608 2630 0 0 0 0
+19	15231361 59695 233251 461539 25.00608 49.99608 2630 0 0 0 0
+20	15291056 135890 233251 461551 25.00608 49.998306666667 5260 0 1 2630 2630
+21	15426946 3625 234625 461189 25.157440227996 49.957440227996 125 0 0 0 0
+22	15430571 3625 234625 461189 25.157440227996 49.957440227996 125 0 0 0 0
+23	15434196 7250 234625 461190 25.157440227996 49.957813561329 250 0 1 125 125
+24	15441446 3770 234178 460742 25.110209697334 49.910209697334 130 0 0 0 0
+25	15445216 3770 234178 460742 25.110209697334 49.910209697334 130 0 0 0 0
+26	15448986 7540 234178 460746 25.110209697334 49.910583030667 260 0 1 130 130
+27	15456526 76096 233292 461524 25.011573333333 49.995401285279 2624 0 0 0 0
+28	15532622 76096 233292 461524 25.011573333333 49.995401285279 2624 0 0 0 0
+29	15608718 152221 233232 461526 25.003746666666 49.995774618612 5249 0 1 2624 2624
+30	15760939 56270 233270 461559 25.0094 49.9994 2630 0 0 0 0
+31	15817209 56270 233270 461559 25.0094 49.9994 2630 0 0 0 0
+32	15873479 132476 233270 461559 25.0094 49.9994 5259 0 1 2630 2630
+33	16005955 3730 234225 460789 25.115103839377 49.915103839377 130 0 0 0 0
+34	16009685 3730 234225 460789 25.115103839377 49.915103839377 130 0 0 0 0
+35	16013415 7375 234225 460790 25.115103839377 49.91547717271 260 0 1 130 130
+36	16020790 153010 233231 461556 25.003306666667 49.998746666666 5280 0 1 150 150
+37	16173800 153335 233231 461556 25.003306666667 49.998746666666 5280 0 1280 52520 43274560
+38	16327135 297401 233231 461556 25.003306666667 49.998746666666 10259 0 1 5130 5130
+39	16624536 3596 235024 459766 25.201239999998 49.801239999998 124 0 0 0 0
+40	16628132 3596 235024 459766 25.201239999998 49.801239999998 124 0 0 0 0
+41	16631728 7192 235024 459772 25.201239999998 49.801613333331 248 0 1 124 124
+42	16638920 3735 233861 460427 25.076005161161 49.876005161161 130 0 0 0 0
+43	16642655 3735 233861 460427 25.076005161161 49.876005161161 130 0 0 0 0
+44	16646390 7465 233861 460440 25.076005161161 49.876378494494 260 0 1 130 130
+45	16653855 290536 233236 461533 25.003853333334 49.996026666667 10024 0 1 2525 2525
+46	16944391 298111 233236 461533 25.003853333334 49.996026666667 10024 0 1248 3151200 3932697600
+47	17242502 414931 233225 461547 25.002706666667 49.9982 14999 0 1 7499 7499
+51	17657433 3625 233746 460313 25.063671228168 49.863671228168 125 0 0 0 0
+52	17661058 3625 233746 460313 25.063671228168 49.863671228168 125 0 0 0 0
+53	17664683 7250 233746 460319 25.063671228168 49.864044561501 250 0 1 125 125
+54	17671933 3830 234053 460619 25.09672042099 49.89672042099 140 0 1 5 5
+55	17675763 3840 234053 460619 25.09672042099 49.89672042099 140 0 208 1040 216320
+56	17679603 7565 234053 460620 25.09672042099 49.897093754323 270 0 1 135 135
+57	17687168 3625 234717 461281 25.168026666665 49.968026666665 125 0 0 0 0
+58	17690793 3625 234717 461281 25.168026666665 49.968026666665 125 0 0 0 0
+59	17694418 7250 234717 461288 25.168026666665 49.968399999998 250 0 1 125 125
+60	17701668 3625 233847 460414 25.074044561501 49.874044561501 125 0 0 0 0
+61	17705293 3625 233847 460414 25.074044561501 49.874044561501 125 0 0 0 0
+62	17708918 7250 233847 460417 25.074044561501 49.874417894834 250 0 1 125 125
+63	17716168 3735 234387 460951 25.130776513444 49.930776513444 130 0 0 0 0
+64	17719903 3735 234387 460951 25.130776513444 49.930776513444 130 0 0 0 0
+65	17723638 7505 234387 460954 25.130776513444 49.931149846777 260 0 1 130 130
+66	17731143 76206 233296 461492 25.011626666667 49.991626666667 2629 0 0 0 0
+67	17807349 76206 233296 461492 25.011626666667 49.991626666667 2629 0 0 0 0
+68	17883555 152441 233234 461517 25.003853333334 49.993853333334 5259 0 1 2629 2629
+69	18035996 47200 233280 461569 25.01 50 2500 0 0 0 0
+70	18083196 47200 233280 461569 25.01 50 2500 0 0 0 0
+71	18130396 119671 233280 461569 25.01 50 4999 0 1 2500 2500
+75	18250067 47200 233281 461570 25.01 50 2500 0 0 0 0
+76	18297267 47200 233281 461570 25.01 50 2500 0 0 0 0
+77	18344467 119671 233281 461570 25.01 50 4999 0 1 2500 2500
+84	18464138 225091 233227 461549 25.002706666667 49.9982 7500 7471 14970 84153750 979403401250
+93	18689229 47200 233282 461571 25.01 50 2500 0 0 0 0
+94	18736429 47200 233282 461571 25.01 50 2500 0 0 0 0
+95	18783629 119671 233282 461571 25.01 50 4999 0 1 2500 2500
+99	18903300 3995 233861 460427 25.076005161161 49.876005161161 130 168 208 22040 3744320
+100	18907295 3865 233861 460427 25.076005161161 49.876005161161 130 0 0 0 0
+101	18911160 4125 233861 460427 25.076005161161 49.876005161161 130 168 208 22040 3744320
+102	18915285 3995 233861 460427 25.076005161161 49.876005161161 130 21 26 2755 58505
+103	18919280 3995 233861 460427 25.076005161161 49.876005161161 130 28 33 3665 103445
+104	18923275 4000 233746 460313 25.063671228168 49.863671228168 125 168 168 21000 3528000
+105	18927275 3750 233746 460313 25.063671228168 49.863671228168 125 0 0 0 0
+106	18931025 4000 233746 460313 25.063671228168 49.863671228168 125 168 168 21000 3528000
+107	18935025 3875 233746 460313 25.063671228168 49.863671228168 125 21 21 2625 55125
+108	18938900 3875 233746 460313 25.063671228168 49.863671228168 125 28 28 3500 98000
+109	18942775 4125 234053 460619 25.09672042099 49.89672042099 135 168 208 23080 3960640
+110	18946900 3885 234053 460619 25.09672042099 49.89672042099 135 0 0.00044 0.0022 9.68e-07
+111	18950785 4125 234053 460619 25.09672042099 49.89672042099 135 168 208 23080 3960640
+112	18954910 3990 234053 460619 25.09672042099 49.89672042099 135 21 26 2885 61885
+113	18958900 3990 234053 460619 25.09672042099 49.89672042099 135 28 33 3830 108890
+114	18962890 4120 234225 460789 25.115103839377 49.915103839377 130 168 216 22080 3761280
+115	18967010 3860 234225 460789 25.115103839377 49.915103839377 130 0 0 0 0
+116	18970870 4120 234225 460789 25.115103839377 49.915103839377 130 168 216 22080 3761280
+117	18974990 3990 234225 460789 25.115103839377 49.915103839377 130 21 27 2760 58770
+118	18978980 3990 234225 460789 25.115103839377 49.915103839377 130 28 34 3670 103780
+119	18982970 169085 233231 461556 25.003306666667 49.998746666666 5130 168 1280 6345400 7997160000
+120	19152055 155775 233231 461556 25.003306666667 49.998746666666 5130 0 0.001773333335 0.067621521395 5.277197082592e-05
+121	19307830 169085 233231 461556 25.003306666667 49.998746666666 5130 168 1280 6345400 7997160000
+122	19476915 163960 233231 461556 25.003306666667 49.998746666666 5130 21 160 793175 124955625
+123	19640875 163960 233231 461556 25.003306666667 49.998746666666 5130 28 167 829085 136311445
+124	19804835 3968 235024 459766 25.201239999998 49.801239999998 124 168 168 20832 3499776
+125	19808803 3720 235024 459766 25.201239999998 49.801239999998 124 0 0 0 0
+126	19812523 3968 235024 459766 25.201239999998 49.801239999998 124 168 168 20832 3499776
+127	19816491 3844 235024 459766 25.201239999998 49.801239999998 124 21 21 2604 54684
+128	19820335 3844 235024 459766 25.201239999998 49.801239999998 124 28 28 3472 97216
+129	19824179 4000 234717 461281 25.168026666665 49.968026666665 125 168 168 21000 3528000
+130	19828179 3750 234717 461281 25.168026666665 49.968026666665 125 0 0 0 0
+131	19831929 4000 234717 461281 25.168026666665 49.968026666665 125 168 168 21000 3528000
+132	19835929 3875 234717 461281 25.168026666665 49.968026666665 125 21 21 2625 55125
+133	19839804 3875 234717 461281 25.168026666665 49.968026666665 125 28 28 3500 98000
+134	19843679 4000 233847 460414 25.074044561501 49.874044561501 125 168 168 21000 3528000
+135	19847679 3750 233847 460414 25.074044561501 49.874044561501 125 0 0 0 0
+136	19851429 4000 233847 460414 25.074044561501 49.874044561501 125 168 168 21000 3528000
+137	19855429 3875 233847 460414 25.074044561501 49.874044561501 125 21 21 2625 55125
+138	19859304 3875 233847 460414 25.074044561501 49.874044561501 125 28 28 3500 98000
+139	19863179 4125 234387 460951 25.130776513444 49.930776513444 130 168 216 22080 3761280
+140	19867304 3865 234387 460951 25.130776513444 49.930776513444 130 0 0 0 0
+141	19871169 4125 234387 460951 25.130776513444 49.930776513444 130 168 216 22080 3761280
+142	19875294 3995 234387 460951 25.130776513444 49.930776513444 130 21 27 2760 58770
+143	19879289 3995 234387 460951 25.130776513444 49.930776513444 130 28 34 3670 103780
+144	19883284 86592 233296 461492 25.011626666667 49.991626666667 2629 168 1280 3224120 4101761600
+145	19969876 78835 233296 461492 25.011626666667 49.991626666667 2629 0 0 0 0
+146	20048711 86592 233296 461492 25.011626666667 49.991626666667 2629 168 1280 3224120 4101761600
+147	20135303 83968 233296 461492 25.011626666667 49.991626666667 2629 21 160 403015 64090025
+148	20219271 83968 233296 461492 25.011626666667 49.991626666667 2629 28 167 421418 69861056
+149	20303239 86563 233218 461502 25.002173333333 49.992173333333 2629 168 1280 3225632 4104107776
+150	20389802 80755 233223 461502 25.00263129296 49.992173333333 2629 0 0.007173333333 0.23019869046 0.0009543649069757
+151	20470557 86438 233223 461502 25.00263129296 49.992173333333 2629 168 1280 3225632 4104107776
+152	20556995 83814 233223 461502 25.00263129296 49.992173333333 2629 21 160 403204 64126684
+153	20640809 83814 233223 461502 25.00263129296 49.992173333333 2629 28 167 421607 69900361
+154	20724623 169095 233220 461506 25.002173333333 49.992173333333 5130 168 1280 6345800 7997896000
+155	20893718 167960 233220 461520 25.002173333333 49.9944 5130 0 0.002226666667 5.6904545007502 0.012517698536108
+156	21061678 149095 233220 461520 25.002173333333 49.9944 5130 168 1280 6345800 7997896000
+157	21210773 143970 233220 461520 25.002173333333 49.9944 5130 21 160 793225 124967125
+158	21354743 143970 233220 461520 25.002173333333 49.9944 5130 28 167 829135 136323645
+159	21498713 54700 233271 461560 25.01 50 2500 128 128 320000 40960000
+160	21553413 54700 233272 461561 25.01 50 2500 128 128 320000 40960000
+161	21608113 54700 233273 461562 25.01 50 2500 128 128 320000 40960000
+162	21662813 54700 233274 461563 25.01 50 2500 136 136 340000 46240000
+163	21717513 54700 233275 461564 25.01 50 2500 136 136 340000 46240000
+164	21772213 54700 233276 461565 25.01 50 2500 136 136 340000 46240000
+165	21826913 57200 233280 461569 25.01 50 2500 1248 1248 3120000 3893760000
+166	21884113 49700 233280 461569 25.01 50 2500 0 0 0 0
+167	21933813 57200 233280 461569 25.01 50 2500 1248 1248 3120000 3893760000
+168	21991013 54700 233280 461569 25.01 50 2500 156 156 390000 60840000
+169	22045713 54700 233280 461569 25.01 50 2500 163 163 407500 66422500
+170	22100413 57200 233281 461570 25.01 50 2500 1248 1248 3120000 3893760000
+171	22157613 49700 233281 461570 25.01 50 2500 0 0 0 0
+172	22207313 57200 233281 461570 25.01 50 2500 1248 1248 3120000 3893760000
+173	22264513 54700 233281 461570 25.01 50 2500 156 156 390000 60840000
+174	22319213 54700 233281 461570 25.01 50 2500 163 163 407500 66422500
+175	22373913 57200 233282 461571 25.01 50 2500 1248 1248 3120000 3893760000
+176	22431113 49700 233282 461571 25.01 50 2500 0 0 0 0
+177	22480813 57200 233282 461571 25.01 50 2500 1248 1248 3120000 3893760000
+178	22538013 54700 233282 461571 25.01 50 2500 156 156 390000 60840000
+179	22592713 54700 233282 461571 25.01 50 2500 163 163 407500 66422500
+180	22647413 3990 233907 460473 25.081378494494 49.881378494494 130 28 33 3665 103445
+181	22651403 3990 233907 460473 25.081378494494 49.881378494494 130 21 26 2755 58505
+182	22655393 3905 234282 460846 25.12047717271 49.92047717271 130 28 34 3670 103780
+183	22659298 3905 234282 460846 25.12047717271 49.92047717271 130 21 27 2760 58770
+184	22663203 163968 233239 461527 25.005919999999 49.995919999999 5129 28 167 828918 136283556
+185	22827171 163968 233239 461527 25.005919999999 49.995919999999 5129 21 160 793015 124930025
+186	22991139 3875 233253 459821 25.006613333331 49.806613333331 125 28 28 3500 98000
+187	22995014 3875 233253 459821 25.006613333331 49.806613333331 125 21 21 2625 55125
+188	22998889 70085 233251 461539 25.00608 49.99608 2630 168 1280 3225600 4103760000
+189	23068974 62325 233251 461539 25.00608 49.99608 2630 0 0 0 0
+190	23131299 70085 233251 461539 25.00608 49.99608 2630 168 1280 3225600 4103760000
+191	23201384 67460 233251 461539 25.00608 49.99608 2630 21 160 403200 64121250
+192	23268844 67460 233251 461539 25.00608 49.99608 2630 28 167 421610 69894920
+193	23336304 4035 234979 461543 25.19620541103 49.99620541103 130 168 216 22080 3761280
+194	23340339 3775 234979 461543 25.19620541103 49.99620541103 130 0 0 0 0
+195	23344114 4035 234979 461543 25.19620541103 49.99620541103 130 168 216 22080 3761280
+196	23348149 3905 234979 461543 25.19620541103 49.99620541103 130 21 27 2760 58770
+197	23352054 3905 234979 461543 25.19620541103 49.99620541103 130 28 34 3670 103780
+198	23355959 4000 234625 461189 25.157440227996 49.957440227996 125 168 168 21000 3528000
+199	23359959 3750 234625 461189 25.157440227996 49.957440227996 125 0 0 0 0
+200	23363709 4000 234625 461189 25.157440227996 49.957440227996 125 168 168 21000 3528000
+201	23367709 3875 234625 461189 25.157440227996 49.957440227996 125 21 21 2625 55125
+202	23371584 3875 234625 461189 25.157440227996 49.957440227996 125 28 28 3500 98000
+203	23375459 86467 233292 461524 25.011573333333 49.995401285279 2624 168 1248 3139752 3895730496
+204	23461926 78720 233292 461524 25.011573333333 49.995401285279 2624 0 0 0 0
+205	23540646 86467 233292 461524 25.011573333333 49.995401285279 2624 168 1248 3139752 3895730496
+206	23627113 83843 233292 461524 25.011573333333 49.995401285279 2624 21 156 392469 60870789
+207	23710956 83843 233292 461524 25.011573333333 49.995401285279 2624 28 163 410837 66493931
+208	23794799 4160 234178 460742 25.110209697334 49.910209697334 130 168 216 22080 3761280
+209	23798959 3900 234178 460742 25.110209697334 49.910209697334 130 0 0 0 0
+210	23802859 4160 234178 460742 25.110209697334 49.910209697334 130 168 216 22080 3761280
+211	23807019 4030 234178 460742 25.110209697334 49.910209697334 130 21 27 2760 58770
+212	23811049 4030 234178 460742 25.110209697334 49.910209697334 130 28 34 3670 103780
+213	23815079 66660 233270 461559 25.0094 49.9994 2630 168 1280 3225600 4103760000
+214	23881739 58900 233270 461559 25.0094 49.9994 2630 0 0 0 0
+215	23940639 66660 233270 461559 25.0094 49.9994 2630 168 1280 3225600 4103760000
+216	24007299 64035 233270 461559 25.0094 49.9994 2630 21 160 403200 64121250
+217	24071334 64035 233270 461559 25.0094 49.9994 2630 28 167 421610 69894920
+218	24135369 3875 233842 460409 25.074044561501 49.874044561501 125 28 28 3500 98000
+219	24139244 3875 233842 460409 25.074044561501 49.874044561501 125 21 21 2625 55125
+220	24143119 4115 234141 460705 25.107093754323 49.907093754323 135 28 33 3830 108890
+221	24147234 4115 234141 460705 25.107093754323 49.907093754323 135 21 26 2885 61885
+222	24151349 144003 233268 461557 25.0094 49.9994 5129 28 167 828972 136297076
+223	24295352 144003 233268 461557 25.0094 49.9994 5129 21 160 793069 124942789
+224	24439355 3875 234808 461372 25.178399999998 49.978399999998 125 28 28 3500 98000
+225	24443230 3875 234808 461372 25.178399999998 49.978399999998 125 21 21 2625 55125
+226	24447105 3875 233948 460514 25.084417894834 49.884417894834 125 28 28 3500 98000
+227	24450980 3875 233948 460514 25.084417894834 49.884417894834 125 21 21 2625 55125
+228	24454855 4030 234474 461038 25.141149846777 49.941149846777 130 28 34 3670 103780
+229	24458885 4030 234474 461038 25.141149846777 49.941149846777 130 21 27 2760 58770
+230	24462915 84000 233233 461516 25.003853333334 49.993853333334 2630 28 167 421585 69888945
+231	24546915 84000 233233 461516 25.003853333334 49.993853333334 2630 21 160 403175 64115625
+232	24630915 4030 234229 460793 25.115583030667 49.915583030667 130 28 34 3670 103780
+233	24634945 4030 234229 460793 25.115583030667 49.915583030667 130 21 27 2760 58770
+234	24638975 79968 233297 461493 25.012173333333 49.992173333333 2499 163 163 407337 66395931
+235	24718943 79968 233297 461493 25.012173333333 49.992173333333 2499 156 156 389844 60815664
+236	24798911 79968 233298 461494 25.012173333333 49.992173333333 2499 163 163 407337 66395931
+237	24878879 79968 233298 461494 25.012173333333 49.992173333333 2499 156 156 389844 60815664
+238	24958847 79968 233299 461495 25.012173333333 49.992173333333 2499 163 163 407337 66395931
+239	25038815 79968 233299 461495 25.012173333333 49.992173333333 2499 156 156 389844 60815664
+256	25118783 83960 233229 461512 25.003306666667 49.993306666667 2630 28 167 421610 69894920
+257	25202743 83960 233229 461512 25.003306666667 49.993306666667 2630 21 160 403200 64121250
+258	25286703 83844 233263 461552 25.008746666666 49.998746666666 2624 28 163 410972 66519716
+259	25370547 83844 233263 461552 25.008746666666 49.998746666666 2624 21 156 392604 60894684
+260	25454391 3875 234710 461274 25.167813561329 49.967813561329 125 28 28 3500 98000
+261	25458266 3875 234710 461274 25.167813561329 49.967813561329 125 21 21 2625 55125
+262	25462141 83968 233293 461489 25.011626666667 49.991626666667 2629 28 167 421443 69867031
+263	25546109 83968 233293 461489 25.011626666667 49.991626666667 2629 21 160 403040 64095650
+270	25630077 4030 233311 459879 25.012698744363 49.812698744363 130 28 34 3670 103780
+271	25634107 4030 233311 459879 25.012698744363 49.812698744363 130 21 27 2760 58770
+272	25638137 67465 233249 461537 25.00608 49.99608 2630 28 167 421635 69901145
+273	25705602 67465 233249 461537 25.00608 49.99608 2630 21 160 403225 64127125
+274	25773067 247467 233236 461531 25.003853333334 49.995919999999 7499 1248 1248 9358752 11679722496
+275	26020534 257625 233236 461533 25.003853333334 49.996026666667 7499 0 0.001760000002 0.30880000332 8.9301334066663e-05
+276	26278159 247307 233236 461533 25.003853333334 49.996026666667 7499 1248 1248 9358752 11679722496
+277	26525466 239808 233236 461533 25.003853333334 49.996026666667 7499 156 156 1169844 182495664
+278	26765274 239808 233236 461533 25.003853333334 49.996026666667 7499 163 163 1222337 199240931
+279	27005082 220120 233224 461546 25.002706666667 49.9982 7500 163 163 1222500 199267500
+280	27225202 220120 233224 461546 25.002706666667 49.9982 7500 156 156 1170000 182520000
+281	27445322 220120 233227 461549 25.002706666667 49.9982 7500 136 136 1020000 138720000
+282	27665442 220120 233228 461550 25.002706666667 49.9982 7500 128 128 960000 122880000
+283	27885562 282740 233228 461550 25.002706666667 49.9982 7500 0.0482 0.070373333333 417.59488849025 23.518480216201
+284	28168302 227620 233228 461550 25.002706666667 49.9982 7500 2493 4994 28076250 109009696250
+285	28395922 5950 234078 461569 25.1 50 250 124800 124800 31200000 3893760000000
+286	28401872 5950 234078 461569 25.1 50 250 124800 124800 31200000 3893760000000
+287	28407822 5950 234079 461570 25.1 50 250 124800 124800 31200000 3893760000000
+288	28413772 5950 234079 461570 25.1 50 250 124800 124800 31200000 3893760000000
+289	28419722 5950 234080 461571 25.1 50 250 124800 124800 31200000 3893760000000
+290	28425672 5950 234080 461571 25.1 50 250 124800 124800 31200000 3893760000000
+291	28431622 5972 233228 461572 25 50 251 307200 307200 77107200 23687331840000
+292	28437594 5095 234717 461572 25 50 251 0 1680 211680 355622400
+293	28442689 5095 234717 461572 25 50 251 0 1680 211680 355622400
+294	28447784 5110 234387 461572 25 50 251 0 2160 222480 378950400
+295	28452894 5110 234387 461572 25 50 251 0 2160 222480 378950400
+296	28458004 5972 233231 461572 25 50 251 252800 263280 63706800 16170178080000
+297	28463976 5972 233231 461572 25 50 251 252800 263280 63706800 16170178080000
+298	28469948 5950 234090 461572 25.1 50 250 124800 126480 31410000 3946528800000
+299	28475898 5950 234090 461572 25.1 50 250 124800 126480 31410000 3946528800000
+300	28481848 5972 233220 461572 25 50 251 252800 262400 63712480 16172978470400
+301	28487820 5972 233220 461572 25 50 251 252800 262400 63712480 16172978470400
+302	28493792 5950 234083 461572 25.1 50 250 374400 374400 93600000 35043840000000
+303	28499742 5950 234083 461572 25.1 50 250 374400 374400 93600000 35043840000000
+304	28505692 5950 234104 461572 25.1 50 250 128000 139280 32258000 4163022880000
+305	28511642 5950 234104 461572 25.1 50 250 128000 139280 32258000 4163022880000
+306	28517592 5950 234094 461572 25.1 50 250 128000 136800 32254000 4161764000000
+307	28523542 5950 234094 461572 25.1 50 250 128000 136800 32254000 4161764000000
+308	28529492 5110 234178 461572 25 50 251 0 2160 222480 378950400
+309	28534602 5110 234178 461572 25 50 251 0 2160 222480 378950400
+310	28539712 5110 234979 461572 25 50 251 0 2160 222480 378950400
+311	28544822 5110 234225 461572 25 50 251 0 2160 222480 378950400
+312	28549932 5110 234225 461572 25 50 251 0 2160 222480 378950400
+313	28555042 5114 233861 461572 24.9 50 252 0 3760 222080 412198400
+314	28560156 5114 233861 461572 24.9 50 252 0 3760 222080 412198400
+315	28565270 5114 233746 461572 24.9 50 252 0 1680 211680 355622400
+316	28570384 5114 233746 461572 24.9 50 252 0 1680 211680 355622400
+317	28575498 5114 234053 461572 24.9 50 252 0 5840 232480 512038400
+318	28580612 5114 234053 461572 24.9 50 252 0 5840 232480 512038400
+319	28585726 5110 234979 461572 25 50 251 0 2160 222480 378950400
+320	28590836 5972 233251 461572 25 50 251 128000 137200 32385680 4179128902400
+321	28596808 5972 233251 461572 25 50 251 128000 137200 32385680 4179128902400
+322	28602780 5095 234625 461572 25 50 251 0 1680 211680 355622400
+323	28607875 5095 234625 461572 25 50 251 0 1680 211680 355622400
+324	28612970 5972 233270 461572 25 50 251 128000 137200 32385680 4179128902400
+325	28618942 5972 233270 461572 25 50 251 128000 137200 32385680 4179128902400
+326	28624914 5075 235024 461572 25.1 50 250 0 1680 210000 352800000
+327	28629989 5075 235024 461572 25.1 50 250 0 1680 210000 352800000
+328	28635064 5114 233847 461572 24.9 50 252 0 1680 211680 355622400
+329	28640178 5114 233847 461572 24.9 50 252 0 1680 211680 355622400
+334	28645292 9305 461572 461572 0.1 50 500 0 17920 17920 321126400
+335	28654597 9305 461572 461572 0.1 50 500 0 17920 17920 321126400
+336	28663902 9305 461572 461572 0.1 50 500 0 17920 17920 321126400
+337	28673207 9305 461572 461572 0.1 50 500 0 17920 17920 321126400
+338	28682512 9305 461572 461572 0.1 50 500 0 17920 17920 321126400
+339	28691817 9305 461572 461572 0.1 50 500 0 17920 17920 321126400
+340	28701122 9301 461572 461572 0.1 50 500 0 0 0 0
+341	28710423 9301 461572 461572 0.1 50 500 0 0 0 0
+342	28719724 9301 461572 461572 0.1 50 500 0 0 0 0
+343	28729025 9301 461572 461572 0.1 50 500 0 0 0 0
+344	28738326 9301 461572 461572 0.1 50 500 0 0 0 0
+345	28747627 9301 461572 461572 0.1 50 500 0 0 0 0
+346	28756928 9301 461572 461572 0.1 50 500 0 0 0 0
+347	28766229 9301 461572 461572 0.1 50 500 0 0 0 0
+348	28775530 9301 461572 461572 0.1 50 500 0 0 0 0
+
